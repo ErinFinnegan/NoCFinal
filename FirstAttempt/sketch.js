@@ -1,37 +1,33 @@
 // The Nature of Code, Daniel Shiffman http://natureofcode.com
 
 
-
-  
   var s = function( sketch ) {
-  
 
-  // an array of ParticleSystems
-  var systems = [];
-  var canvas;
 
+      var vehicles = [];
 
   sketch.setup = function() {
-    mydefault = myp5.ellipse;
-    //sketch._money = sketch.loadImage("styles/quarter.png");   
-    canvas = sketch.createCanvas(400, 300);
-    canvas.class("p5canvas");   //references the HTML
 
-  }
 
-  sketch.draw = function() {
+      canvas = sketch.createCanvas(400, 300);
+      canvas.class("p5canvas");   //references the HTML
+        // We are now making random vehicles and storing them in an array
+        for (var i = 0; i < 100; i++) {
+          vehicles.push(new Vehicle(350,250));
+        }
+      }
+
+   sketch.draw = function() {
     sketch.clear();
-    //sketch.background(0,255,0);
-  
-    if (mouthopen === true) {
-       console.log("mouthX, bottomlip " + mouthX + " , " + bottomlip);
-	    }  
-    
-    sketch.fill(255,0,0);
+        
+        for (var i = 0; i < vehicles.length; i++) {
+          vehicles[i].applyBehaviors(vehicles);
+          vehicles[i].update();
+          vehicles[i].borders();
+          vehicles[i].display(); 
+        }
 
-  }
-
-};
-// If its coming from outside the sketch you can use p5.thing, but inside the sketch its sketch.thing
+      }
+ };
 
 var myp5 = new p5(s, 'p5canvas');
