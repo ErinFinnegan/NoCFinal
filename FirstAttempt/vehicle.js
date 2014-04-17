@@ -6,7 +6,7 @@
 	function Vehicle(x, y) {
 	  // All the usual stuff
 	  this.position = new PVector(x, y);
-	  this.r = 12;
+	  this.r = 9;  //the width of the elipse
 	  this.maxspeed = 3;    // Maximum speed
 	  this.maxforce = 0.2;  // Maximum steering force
 	  this.acceleration = new PVector(0, 0);
@@ -86,9 +86,9 @@
 	}
 
 	Vehicle.prototype.display = function() {
-	  myp5.fill(127);
-	  myp5.stroke(200);
-	  myp5.strokeWeight(2);
+	  myp5.fill(255, 0, 0);
+	  myp5.stroke(255, 255, 255);
+	  myp5.strokeWeight(1);
 	  myp5.pushMatrix();
 	  myp5.translate(this.position.x, this.position.y);
 	  myp5.ellipse(0, 0, this.r, this.r);
