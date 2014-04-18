@@ -3,7 +3,7 @@
 
   var s = function( sketch ) {
 
-      var videostarted = false;
+
       var vehicles = [];
 
   sketch.setup = function() {

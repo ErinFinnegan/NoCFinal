@@ -20,18 +20,8 @@
 	   separateForce.mult(2);
 	   seekForce.mult(1);
 	   this.applyForce(separateForce);
-	   if (videostarted = true && mouthopen == false){ 
-	   this.applyForce(seekForce);
-	   console.log("go for the face!")
-		} else {
-			seekForce = this.seek(new PVector(0,0));
-			console.log("Avoid the face!")
-		}
+	   this.applyForce(seekForce); 
 	}
-	   //if the mouth is closed, seek the nearest jaw line parameter
-	   //if the mouth is open, get as far away as possible
-	   //if you're eaten, disappear (stop displaying?) and user gets a point 
-	
 
 	Vehicle.prototype.applyForce = function(force) {
 	  // We could add mass here if we want A = F / M

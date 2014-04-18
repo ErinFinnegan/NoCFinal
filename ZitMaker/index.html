@@ -164,7 +164,6 @@
 		        var bottomlip = 0.0;  //my addition
 		        var mouthopen = false;  //my addition
 		        var mouthX = 0.0;   //my addition
-		        //var videostarted = false;  //my addition
 		        
 				var ctrack = new clm.tracker({useWebGL : true});
 				ctrack.init(pModel);
@@ -238,7 +237,6 @@
 					// start loop to draw face
 					drawLoop();
 					console.log('Video Start was clicked!!!!!!!');
-					videostarted = true;
 				}
 
 				function positionLoop() {
@@ -253,7 +251,6 @@
 		               toplip = (positions[60][1]);
 		               bottomlip = (positions[57][1]);
 		               mouthX = (positions[57][0]);
-
 		            }
 		            if ((bottomlip - toplip) >= 6){
 		              mouthopen = true;
@@ -275,7 +272,7 @@
 					overlayCC.clearRect(0, 0, 400, 300);
 					//psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
 					if (ctrack.getCurrentPosition()) {
-						ctrack.draw(overlay);  // comment this out not to see the mask
+						//ctrack.draw(overlay);  // comment this out not to see the mask
 						//console.log('still tracking the overlay - this is the draw loop');
 						//console.log('value = ' + value);
 					}
