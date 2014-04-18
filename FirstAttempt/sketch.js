@@ -25,6 +25,7 @@
           vehicles[i].update();
           vehicles[i].borders();
           vehicles[i].display(); 
+          //oh right, they get displayed in draw...
         }
 
       }

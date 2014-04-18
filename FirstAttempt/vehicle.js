@@ -22,10 +22,11 @@
 	   this.applyForce(separateForce);
 	   if (videostarted = true && mouthopen == false){ 
 	   this.applyForce(seekForce);
-	   console.log("go for the face!")
+	   //console.log("go for the face!")
 		} else {
 			seekForce = this.seek(new PVector(0,0));
-			console.log("Avoid the face!")
+			//console.log("Avoid the face!")
+			seekForce.mult(100);  //make them avoid the face faster!!
 		}
 	}
 	   //if the mouth is closed, seek the nearest jaw line parameter
@@ -56,6 +57,7 @@
 	      sum.add(diff);
 	      count++;            // Keep track of how many
 	    }
+	    //It's probably in here where I wand to add something, like "if you're inside the mouth disappear"
 	  }
 	  // Average -- divide by how many
 	  if (count > 0) {
@@ -96,11 +98,16 @@
 	}
 
 	Vehicle.prototype.display = function() {
+	//this is where the prototypes get displayed... how do we stop displaying one at a time?
 	  myp5.fill(255, 0, 0);
 	  myp5.stroke(255, 255, 255);
 	  myp5.strokeWeight(1);
 	  myp5.pushMatrix();
 	  myp5.translate(this.position.x, this.position.y);
+	  if(this.position.x == mouthX && this.position.y == bottomlip ) {
+	  	console.log("one is in the mouth!!!")
+	  	myp5.fill(0, 0, 255);
+	  }
 	  myp5.ellipse(0, 0, this.r, this.r);
 	  myp5.popMatrix();
 	}

@@ -164,7 +164,9 @@
 		        var bottomlip = 0.0;  //my addition
 		        var mouthopen = false;  //my addition
 		        var mouthX = 0.0;   //my addition
-		        //var videostarted = false;  //my addition
+		       // var jawline = []; //it is an array of 0-14 (15 total points)
+		       //I don't actually know how to make an empty javascript array
+
 		        
 				var ctrack = new clm.tracker({useWebGL : true});
 				ctrack.init(pModel);
@@ -253,6 +255,11 @@
 		               toplip = (positions[60][1]);
 		               bottomlip = (positions[57][1]);
 		               mouthX = (positions[57][0]);
+		                for (var i = 0; i < 15; i++) {
+
+		                }
+		               //look for points along the jawline and go for a random point.
+		               //maybe the jawline is a dictionary of coordinates? Nah... mouthX is one point.
 
 		            }
 		            if ((bottomlip - toplip) >= 6){
