@@ -6,7 +6,6 @@
 
 
 	function Vehicle(x, y) {
-	  var isAlive = new Boolean(true);
 	  // All the usual stuff
 	  this.position = new PVector(x, y);
 	  this.r = 9;  //the width of the elipse
@@ -31,6 +30,7 @@
 			//console.log("Avoid the face!")
 			seekForce.mult(100);  //make them avoid the face faster!!
 		}
+
 	}
 	   //if the mouth is closed, seek the nearest jaw line parameter
 	   //if the mouth is open, get as far away as possible
@@ -99,18 +99,6 @@
 		  this.position.add(this.velocity);
 		  // Reset accelertion to 0 each cycle
 		  this.acceleration.mult(0);
-		     if(mouthopen === true && (this.position.y < (bottomlip + 10)) && (this.position.y > (bottomlip-10))) {
-		     	if ((this.position.x <= (mouthX + 10)) && (this.position.x >= (mouthX - 10))){
-		    		 this.isAlive = false;
-		    		console.log(eval(this.isAlive));
-			   		 myp5.fill(0,255,0);
-			    }
-		    }
-		    	else {
-				  myp5.fill(0, 0, 255);
-				  //console.log("blue is " + eval(this.isAlive));
-			    	}
-    
 		}
 
 
@@ -121,12 +109,24 @@
 	  myp5.pushMatrix();
 	  myp5.translate(this.position.x, this.position.y);
 	  //color was here
-	  if (this.isAlive = true ) {
-		  myp5.ellipse(0, 0, this.r, this.r);
-	}
+	  myp5.ellipse(0, 0, this.r, this.r);
 	  myp5.popMatrix();
 		
 	}
+
+	Vehicle.prototype.isAlive = function(){
+	     if(mouthopen === true && (this.position.y < (bottomlip + 10)) && (this.position.y > (bottomlip-10))) {
+	     	if ((this.position.x <= (mouthX + 10)) && (this.position.x >= (mouthX - 10))){
+	    		 this.isAlive === false;
+	    		}
+		if(this.isAlive === true){
+		   		 myp5.fill(0,255,0);
+			    }	else {
+			  myp5.fill(0, 0, 255);
+			  }
+		}
+	}
+
 
 	// Wraparound
 	Vehicle.prototype.borders = function() {

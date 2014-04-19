@@ -1,0 +1,7 @@
+
+This only happens sometimes, doesn't interfere with the sketch and often disappears with a refresh: 
+Uncaught TypeError: Cannot read property 'x' of null p5.min.js:1
+o.updateMouseCoords p5.min.js:1
+o.onmousemove p5.min.js:1
+(anonymous function) p5.min.js:1
+
