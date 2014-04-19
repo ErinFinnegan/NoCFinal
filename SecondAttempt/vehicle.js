@@ -3,6 +3,8 @@
 
 // Vehicle object
 //var log = false; //not sure what that does
+
+
 	function Vehicle(x, y) {
 	  // All the usual stuff
 	  this.position = new PVector(x, y);
@@ -57,7 +59,8 @@
 	      sum.add(diff);
 	      count++;            // Keep track of how many
 	    }
-	    //It's probably in here where I wand to add something, like "if you're inside the mouth disappear"
+	    
+
 	  }
 	  // Average -- divide by how many
 	  if (count > 0) {
@@ -95,19 +98,23 @@
 	  this.position.add(this.velocity);
 	  // Reset accelertion to 0 each cycle
 	  this.acceleration.mult(0);
+	    if(mouthopen === true){
+	    	myp5.fill(255, 0, 0); 
+	    	console.log("mouthX, bottomlip " + mouthX + ", " + bottomlip);
+	    } 
+	    	else {
+			  myp5.fill(0, 0, 255);
+		    	}
 	}
 
 	Vehicle.prototype.display = function() {
 	//this is where the prototypes get displayed... how do we stop displaying one at a time?
-	  myp5.fill(255, 0, 0);
+
 	  myp5.stroke(255, 255, 255);
 	  myp5.strokeWeight(1);
 	  myp5.pushMatrix();
 	  myp5.translate(this.position.x, this.position.y);
-	  if(this.position.x == mouthX && this.position.y == bottomlip ) {
-	  	console.log("one is in the mouth!!!")
-	  	myp5.fill(0, 0, 255);
-	  }
+	  //color was here
 	  myp5.ellipse(0, 0, this.r, this.r);
 	  myp5.popMatrix();
 	}
@@ -120,5 +127,7 @@
 	  if (this.position.y < -this.r) this.position.y = height+this.r;
 	  if (this.position.x >  width+this.r) this.position.x = -this.r;
 	  if (this.position.y > height+this.r) this.position.y = -this.r;
+	
+
 	}
 
