@@ -14,6 +14,7 @@
 	  this.maxforce = 0.2;  // Maximum steering force
 	  this.acceleration = new PVector(0, 0);
 	  this.velocity = new PVector(0, 0);
+
 	}
 
 
@@ -92,6 +93,9 @@
 
 	// Method to update location
 	Vehicle.prototype.update = function() {
+
+		var yourScore = 0;
+
 		  // Update velocity
 		  this.velocity.add(this.acceleration);
 		  // Limit speed
@@ -104,8 +108,8 @@
 		    		 //this.isAlive = false;
 		    		//console.log(eval(this.isAlive));
 			   		 myp5.fill(0,255,0);
-			   		 //yourScore++;
-			   		 //console.log("yourScore " + yourScore);
+			   		 yourScore = yourScore + 1;
+			   		 console.log("yourScore " + yourScore);
 			    }
 		    }
 		    	else {

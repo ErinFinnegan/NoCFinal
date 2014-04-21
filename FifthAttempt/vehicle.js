@@ -6,7 +6,8 @@
 
 
 	function Vehicle(x, y) {
-	  var isAlive = new Boolean(true);
+	  //var isAlive = new Boolean(true);
+	  this.isAlive = true;
 	  // All the usual stuff
 	  this.position = new PVector(x, y);
 	  this.r = 9;  //the width of the elipse
@@ -102,14 +103,14 @@
 		     if(mouthopen === true && (this.position.y < (bottomlip + 10)) && (this.position.y > (bottomlip-10))) {
 		     	if ((this.position.x <= (mouthX + 10)) && (this.position.x >= (mouthX - 10))){
 		    		 this.isAlive = false;
-		    		console.log(eval(this.isAlive));
-			   		 myp5.fill(0,255,0);
-			   		 yourScore++;
-			   		 console.log("yourScore " + yourScore);
+		    		 console.log(eval(this.isAlive));
+			   		 //myp5.fill(0,255,0);
+			   		 //yourScore++;
+			   		 //console.log("yourScore " + yourScore);
 			    }
 		    }
 		    	else {
-				  myp5.fill(0, 0, 255);
+				  //myp5.fill(0, 0, 255);
 				  //console.log("blue is " + eval(this.isAlive));
 			    	}
     
@@ -123,10 +124,12 @@
 	  myp5.pushMatrix();
 	  myp5.translate(this.position.x, this.position.y);
 	  //color was here
-	  if (this.isAlive = true ) {
-		  myp5.ellipse(0, 0, this.r, this.r);
-	}
-	  myp5.popMatrix();
+	 myp5.fill(0,255,0);
+	 if (this.isAlive) {
+	 	myp5.ellipse(0, 0, this.r, this.r);
+	 	//myp5.fill(255,0,0);
+	 }
+	 myp5.popMatrix();
 		
 	}
 

@@ -5,7 +5,7 @@
 
       var videostarted = false;
       var vehicles = [];
-      var yourScore = 0;
+ 
 
   sketch.setup = function() {
 

@@ -21,7 +21,7 @@
     sketch.clear();
         
         for (var i = 0; i < vehicles.length; i++) {
-          vehicles[i].checkAlive() === true;
+          //vehicles[i].checkAlive() === true;
           vehicles[i].applyBehaviors(vehicles);
           vehicles[i].update();
           vehicles[i].borders();
