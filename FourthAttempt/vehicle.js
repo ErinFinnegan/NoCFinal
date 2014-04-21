@@ -13,7 +13,7 @@
 	  this.maxforce = 0.2;  // Maximum steering force
 	  this.acceleration = new PVector(0, 0);
 	  this.velocity = new PVector(0, 0);
-	  this.alive == true;
+	  this.alive = true;
 	}
 
 
