@@ -5,3 +5,8 @@ o.updateMouseCoords p5.min.js:1
 o.onmousemove p5.min.js:1
 (anonymous function) p5.min.js:1
 
+
+a patchresponse was monotone, causing normalization to fail. Leaving it unchanged. 
+52
+a patchresponse was monotone, causing normalization to fail. Leaving it unchanged. .svmfilter_webgl.js:1023
+

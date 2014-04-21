@@ -1,5 +1,5 @@
 // The Nature of Code, Daniel Shiffman http://natureofcode.com
-
+//adapting example 6_08
 
 // Vehicle object
 //var log = false; //not sure what that does
@@ -13,6 +13,7 @@
 	  this.maxforce = 0.2;  // Maximum steering force
 	  this.acceleration = new PVector(0, 0);
 	  this.velocity = new PVector(0, 0);
+	  this.alive == true;
 	}
 
 
@@ -114,18 +115,21 @@
 		
 	}
 
-	Vehicle.prototype.isAlive = function(){
+	Vehicle.prototype.checkAlive = function(){
 	     if(mouthopen === true && (this.position.y < (bottomlip + 10)) && (this.position.y > (bottomlip-10))) {
 	     	if ((this.position.x <= (mouthX + 10)) && (this.position.x >= (mouthX - 10))){
-	    		 this.isAlive === false;
+	    		 this.alive = false;
 	    		}
-		if(this.isAlive === true){
+		if(this.alive === true){
 		   		 myp5.fill(0,255,0);
 			    }	else {
 			  myp5.fill(0, 0, 255);
 			  }
 		}
 	}
+
+
+
 
 
 	// Wraparound

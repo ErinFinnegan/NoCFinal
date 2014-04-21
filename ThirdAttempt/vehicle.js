@@ -1,5 +1,5 @@
 // The Nature of Code, Daniel Shiffman http://natureofcode.com
-
+//adapting example 6_08
 
 // Vehicle object
 //var log = false; //not sure what that does

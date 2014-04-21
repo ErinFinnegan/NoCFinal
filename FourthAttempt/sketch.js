@@ -1,5 +1,5 @@
 // The Nature of Code, Daniel Shiffman http://natureofcode.com
-
+//adapting example 6_08
 
   var s = function( sketch ) {
 
@@ -21,11 +21,13 @@
     sketch.clear();
         
         for (var i = 0; i < vehicles.length; i++) {
-          vehicles[i].isAlive();
+          vehicles[i].checkAlive() === true;
           vehicles[i].applyBehaviors(vehicles);
           vehicles[i].update();
           vehicles[i].borders();
           vehicles[i].display(); 
+          
+         
         }
       }
  };
