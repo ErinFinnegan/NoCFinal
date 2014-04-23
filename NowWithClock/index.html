@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>What do you want to puke today?</title>
+		<title>EAT ALL THE THINGS</title>
 		<meta charset="utf-8">
 		<link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css"> 
 		<style>
@@ -12,9 +12,9 @@
 				background-color: #f0f0f0;
 				margin: 0px auto;
 				max-width: 1150px;
-				-webkit-column-count:2; /* Chrome, Safari, Opera */
-				-moz-column-count:2; /* Firefox */
-				column-count:2;
+				/*-webkit-column-count:2;*/ /* Chrome, Safari, Opera */
+				/*-moz-column-count:2;*/ /* Firefox */
+				/*column-count:2;*/
 			}
 			
 			#overlay {
@@ -134,7 +134,8 @@
 		<script src="js/svmfilter_fft.js"></script>
 		<script src="js/mossefilter.js"></script>
 		<script src="js/Stats.js"></script>
-		<div id="content">
+		<h1><div id="content"></h1>
+			<div id="clock"></div>
 			<h2>Eat the Ghosts</h2>
 			<div id="container">
 				<video id="videoel" width="400" height="300" preload="auto" loop>
@@ -297,8 +298,32 @@
 				}, false);
 
 			</script>
-	
-	
+	<script src="js/gameclock.js"></script>
+			<input type="button" id="startClock" onClick="startClock()" value="Start Clock"/> 
+		    <input type="button" id="stopClock" onClick="stopClock()" value="Stop Clock"/>
+		   	<input type="button" id="stopClock" onClick="resetClock()" value="Reset Clock"/>
+		
+	<script>
+		var stopme = function(){
+			alert('Game Over!');
+		}
+		var clock = new Clock({
+			time:45000,
+			displayEL:'clock',
+			stopAferTimeout:true,
+			resetAfterTimeout:false,
+			timeoutCallBack:stopme
+		});
+		function stopClock(){
+		    clock.StopClock();
+		}
+		function startClock(){
+		   clock.StartClock(); 
+		}
+		function resetClock(){
+		   clock.ResetClock(); 
+		}
+	</script>
 
 			
 		  </div>

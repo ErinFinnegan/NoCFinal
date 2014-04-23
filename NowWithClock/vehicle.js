@@ -10,8 +10,8 @@
 	  this.isAlive = true;
 	  // All the usual stuff
 	  this.position = new PVector(x, y);
-	  this.r = 80;  //the width of the elipse
-	  this.maxspeed = 4;    // Maximum speed  13 is too high
+	  this.r = 20;  //the width of the elipse
+	  this.maxspeed = 3;    // Maximum speed  13 is too high
 	  this.maxforce = 0.2;  // Maximum steering force was .2
 	  this.acceleration = new PVector(0, 0);
 	  this.velocity = new PVector(0, 0);
@@ -21,7 +21,7 @@
 	Vehicle.prototype.applyBehaviors = function(vehicles) {
 	   var separateForce = this.separate(vehicles);
 	   var seekForce = this.seek(new PVector(mouthX,bottomlip));
-	   separateForce.mult(1);  //how fast do they run away
+	   separateForce.mult(4);  //how fast do they run away
 	   seekForce.mult(1);
 	   this.applyForce(separateForce);
 	   if (videostarted = true && mouthopen == false){ 
@@ -126,9 +126,7 @@
 	  //color was here
 	 myp5.fill(0,0,255);
 	 if (this.isAlive) {
-	 	//myp5.ellipse(0, 0, this.r, this.r);
-	 	myp5.image(myp5.marshmallowghost, 0, 0, this.r, this.r);
-	 	 //myp5.image(myp5.marshmallowghost, this.position.x, this.position.y, 50, 50);
+	 	myp5.ellipse(0, 0, this.r, this.r);
 	 	//myp5.fill(255,0,0);
 	 }
 	 myp5.popMatrix();
