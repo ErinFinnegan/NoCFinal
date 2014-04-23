@@ -8,7 +8,7 @@
 
   sketch.setup = function() {
 
-
+      sketch.marshmallowghost = sketch.loadImage("styles/marshmallowghost.png");
       canvas = sketch.createCanvas(400, 300);
       canvas.class("p5canvas");   //references the HTML
         // We are now making random vehicles and storing them in an array

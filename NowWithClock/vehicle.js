@@ -10,8 +10,9 @@
 	  this.isAlive = true;
 	  // All the usual stuff
 	  this.position = new PVector(x, y);
-	  this.r = 20;  //the width of the elipse
-	  this.maxspeed = 3;    // Maximum speed  13 is too high
+	  //this.r = 20;  //the width of the elipse
+	  this.r = 80;  //a good width for the ghost
+	  this.maxspeed = 4;    // Maximum speed  13 is too high
 	  this.maxforce = 0.2;  // Maximum steering force was .2
 	  this.acceleration = new PVector(0, 0);
 	  this.velocity = new PVector(0, 0);
@@ -21,7 +22,8 @@
 	Vehicle.prototype.applyBehaviors = function(vehicles) {
 	   var separateForce = this.separate(vehicles);
 	   var seekForce = this.seek(new PVector(mouthX,bottomlip));
-	   separateForce.mult(4);  //how fast do they run away
+	   //separate Force is better on 4 for the ellipses, but lower for the ghosts
+	   separateForce.mult(1);  //how fast do they run away
 	   seekForce.mult(1);
 	   this.applyForce(separateForce);
 	   if (videostarted = true && mouthopen == false){ 
@@ -99,9 +101,15 @@
 		  this.velocity.limit(this.maxspeed);
 		  this.position.add(this.velocity);
 		  // Reset accelertion to 0 each cycle
-		  this.acceleration.mult(0);
-		     if(mouthopen === true && (this.position.y < (bottomlip + 10)) && (this.position.y > (bottomlip-10))) {
-		     	if ((this.position.x <= (mouthX + 10)) && (this.position.x >= (mouthX - 10))){
+		  this.acceleration.mult(0);  //the next part is where the targetting happens
+
+		  // targeting for ghost images:
+		    if(mouthopen === true && (this.position.y < (bottomlip + 30)) && (this.position.y > (bottomlip-30))) {
+		    	if ((this.position.x < (mouthX + 30)) && (this.position.x > (mouthX - 30))){
+
+ 		  //targetting for ellipses
+		     // if(mouthopen === true && (this.position.y < (bottomlip + 10)) && (this.position.y > (bottomlip-10))) {
+		     // 	if ((this.position.x <= (mouthX + 10)) && (this.position.x >= (mouthX - 10))){
 		    		 this.isAlive = false;
 		    		 //console.log(eval(this.isAlive));
 			   		 //myp5.fill(0,255,0);
@@ -126,7 +134,8 @@
 	  //color was here
 	 myp5.fill(0,0,255);
 	 if (this.isAlive) {
-	 	myp5.ellipse(0, 0, this.r, this.r);
+	 	//myp5.ellipse(0, 0, this.r, this.r);
+		myp5.image(myp5.marshmallowghost, 0, 0, this.r, this.r);
 	 	//myp5.fill(255,0,0);
 	 }
 	 myp5.popMatrix();
