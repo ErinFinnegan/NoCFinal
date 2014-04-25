@@ -636,8 +636,8 @@ var clm = {
 			}
 			
 			var cc = canvas.getContext('2d');
-			cc.fillStyle = "rgb(200,200,200)";
-			cc.strokeStyle = "rgb(130,255,50)";
+			cc.fillStyle = "rgb(255,0,0)";
+			cc.strokeStyle = "rgb(255,0,50)";
 			//cc.lineWidth = 1;
 			
 			var paths;
@@ -651,7 +651,7 @@ var clm = {
 				if (typeof(paths[i]) == 'number') {
 					drawPoint(cc, paths[i], params);
 				} else {
-					drawPath(cc, paths[i], params);
+					drawPath(cc, paths[i], params);   //perhaps where the paths are being drawn
 				}
 			}
 		}
@@ -1157,7 +1157,7 @@ var clm = {
 		
 		// draw a parametrized line on a canvas
 		var drawPath = function(canvasContext, path, dp) {
-			canvasContext.beginPath();
+			canvasContext.beginPath();   //pretty sure this is the part I need to change - EEF
 			var i, x, y, a, b;
 			for (var p = 0;p < path.length;p++) {
 				i = path[p]*2;
@@ -1197,10 +1197,10 @@ var clm = {
 			b = dp[0]*y + dp[1]*x + dp[3];
 			x += a;
 			y += b;
-			canvasContext.beginPath();
-			canvasContext.arc(x, y, 1, 0, Math.PI*2, true);
-			canvasContext.closePath();
-			canvasContext.fill();
+		//	canvasContext.beginPath();
+		//	canvasContext.arc(x, y, 1, 0, Math.PI*2, true);
+		//	canvasContext.closePath();
+		//	canvasContext.fill();
 		}
 		
 		// procrustes analysis
@@ -1288,46 +1288,46 @@ var clm = {
 			return [translationX, translationY, scaling, rotation];
 		}
 		
-		// function to draw pixeldata on some canvas, only used for debugging
-		var drawData = function(canvasContext, data, width, height, transposed, drawX, drawY) {
-			var psci = canvasContext.createImageData(width, height);
-			var pscidata = psci.data;
-			for (var j = 0;j < width*height;j++) {
-				if (!transposed) {
-					var val = data[(j%width)+((j/width) >> 0)*width];
-				} else {
-					var val = data[(j%height)*height+((j/height) >> 0)];
-				}
-				val = val > 255 ? 255 : val;
-				val = val < 0 ? 0 : val;
-				pscidata[j*4] = val;
-				pscidata[(j*4)+1] = val;
-				pscidata[(j*4)+2] = val;
-				pscidata[(j*4)+3] = 255;
-			}
-			canvasContext.putImageData(psci, drawX, drawY);
-		}
+		// // function to draw pixeldata on some canvas, only used for debugging
+		// var drawData = function(canvasContext, data, width, height, transposed, drawX, drawY) {
+		// 	var psci = canvasContext.createImageData(width, height);
+		// 	var pscidata = psci.data;
+		// 	for (var j = 0;j < width*height;j++) {
+		// 		if (!transposed) {
+		// 			var val = data[(j%width)+((j/width) >> 0)*width];
+		// 		} else {
+		// 			var val = data[(j%height)*height+((j/height) >> 0)];
+		// 		}
+		// 		val = val > 255 ? 255 : val;
+		// 		val = val < 0 ? 0 : val;
+		// 		pscidata[j*4] = val;
+		// 		pscidata[(j*4)+1] = val;
+		// 		pscidata[(j*4)+2] = val;
+		// 		pscidata[(j*4)+3] = 255;
+		// 	}
+		// 	canvasContext.putImageData(psci, drawX, drawY);
+		// }
 		
-		var requestAnimFrame = (function() {
-			return window.requestAnimationFrame ||
-			window.webkitRequestAnimationFrame ||
-			window.mozRequestAnimationFrame ||
-			window.oRequestAnimationFrame ||
-			window.msRequestAnimationFrame ||
-			function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
-				return window.setTimeout(callback, 1000/60);
-			};
-		})();
+		// var requestAnimFrame = (function() {
+		// 	return window.requestAnimationFrame ||
+		// 	window.webkitRequestAnimationFrame ||
+		// 	window.mozRequestAnimationFrame ||
+		// 	window.oRequestAnimationFrame ||
+		// 	window.msRequestAnimationFrame ||
+		// 	function(/* function FrameRequestCallback */ callback, /* DOMElement Element */ element) {
+		// 		return window.setTimeout(callback, 1000/60);
+		// 	};
+		// })();
 		
-		var cancelRequestAnimFrame = (function() {
-			return window.cancelCancelRequestAnimationFrame ||
-				window.webkitCancelRequestAnimationFrame ||
-				window.mozCancelRequestAnimationFrame ||
-				window.oCancelRequestAnimationFrame ||
-				window.msCancelRequestAnimationFrame ||
-				window.clearTimeout;
-		})();
+		// var cancelRequestAnimFrame = (function() {
+		// 	return window.cancelCancelRequestAnimationFrame ||
+		// 		window.webkitCancelRequestAnimationFrame ||
+		// 		window.mozCancelRequestAnimationFrame ||
+		// 		window.oCancelRequestAnimationFrame ||
+		// 		window.msCancelRequestAnimationFrame ||
+		// 		window.clearTimeout;
+		// })();
 		
-		return true;
+		// return true;
 	}
 }
