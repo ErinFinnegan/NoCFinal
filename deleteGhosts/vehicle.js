@@ -107,14 +107,9 @@
 		    if(mouthopen === true && (this.position.y < (bottomlip + 30)) && (this.position.y > (bottomlip-30))) {
 		    	if ((this.position.x < (mouthX + 30)) && (this.position.x > (mouthX - 30))){
 
- 		  //targetting for ellipses
-		     // if(mouthopen === true && (this.position.y < (bottomlip + 10)) && (this.position.y > (bottomlip-10))) {
-		     // 	if ((this.position.x <= (mouthX + 10)) && (this.position.x >= (mouthX - 10))){
 		    		 this.isAlive = false;
 		    		 //console.log(eval(this.isAlive));
-			   		 //myp5.fill(0,255,0);
-			   		 //yourScore++;
-			   		 //console.log("yourScore " + yourScore);
+
 			    }
 		    }
 		    	else {
