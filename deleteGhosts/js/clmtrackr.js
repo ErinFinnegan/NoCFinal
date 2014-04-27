@@ -48,6 +48,9 @@ var clm = {
 		var responseList = ['raw'];
 		var responseIndex = 0;
 		
+		var someColor = ['##FFFFFF', 'FF0A0A', '#FF580A'];
+
+
 		/*
 		It's possible to experiment with the sequence of variances used for the finding the maximum in the KDE.
 		This sequence is pretty arbitrary, but was found to be okay using some manual testing.
@@ -648,8 +651,8 @@ var clm = {
 			}
 			
 			var cc = canvas.getContext('2d');
-			cc.fillStyle = "rgb(200,200,200)";
-			cc.strokeStyle = "rgb(0,255,50)";
+			cc.fillStyle = someColor[2];
+			cc.strokeStyle = someColor[2];;
 			//cc.lineWidth = 1;
 			
 			var paths;
@@ -1174,8 +1177,8 @@ var clm = {
 			for (var p = 0;p < path.length;p++) {
 				i = path[p]*2;
 				x = meanShape[i/2][0];
-				cc.fillStyle = "rgb(0,200,0)";
-				cc.strokeStyle = "rgb(0,200,0)";
+				cc.fillStyle = someColor[2];
+				cc.strokeStyle = someColor[2];;
 				y = meanShape[i/2][1];
 				for (var j = 0;j < numParameters;j++) {
 					x += model.shapeModel.eigenVectors[i][j]*dp[j+4];
@@ -1185,8 +1188,6 @@ var clm = {
 				b = dp[0]*y + dp[1]*x + dp[3];
 				x += a;
 				y += b;
-				cc.fillStyle = "rgb(200,200,200)";
-				cc.strokeStyle = "rgb(200,200,200)";
 				
 				if (i == 0) {
 					canvasContext.moveTo(x,y);
