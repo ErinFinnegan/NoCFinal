@@ -32,6 +32,12 @@
           vehicles[i].update();
           vehicles[i].borders();
           vehicles[i].display(); 
+          // if (!ghosts[i].isAlive) {  //at Shiffman's suggestion
+           // ghosts.splice(i, 1);
+          if (!vehicles[i].isAlive){
+            vehicles.splice(i, 1);
+            console.log("yourscore = " + vehicles.length);
+          }
           
          
         }
