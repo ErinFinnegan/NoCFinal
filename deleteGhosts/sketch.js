@@ -5,6 +5,7 @@
 
       var videostarted = false;
       var vehicles = [];
+      var yourScore = 0;
 
   sketch.setup = function() {
 
@@ -36,7 +37,9 @@
            // ghosts.splice(i, 1);
           if (!vehicles[i].isAlive){
             vehicles.splice(i, 1);
-            console.log("yourscore = " + vehicles.length);
+            score = yourScore + 1;
+          //
+            console.log("yourscore = " + score);
           }
           
          

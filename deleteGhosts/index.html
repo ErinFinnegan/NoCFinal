@@ -171,6 +171,7 @@
 		        var LeftsideOfmouthY = 0.0;
 		        var RightsideOfmouthX = 0.0;
 		        var RightsideOfmouthY = 0.0;
+		        var yourScore = 0;
 		       // var jawline = []; //it is an array of 0-14 (15 total points)
 		       //I don't actually know how to make an empty javascript array
 
@@ -245,7 +246,7 @@
 					// start tracking
 					ctrack.start(vid);
 					// start loop to draw face
-					//drawLoop();
+					drawLoop();
 					console.log('Video Start was clicked!!!!!!!');
 					videostarted = true;
 				}
@@ -315,7 +316,7 @@
 		
 	<script>
 		var stopme = function(){
-			alert('Game Over! Your final score is ' + myp5.vehicles.length);
+			alert('Game Over! Your final score is ' + myp5.score);
 		}
 		var clock = new Clock({
 			time:30000,
