@@ -12,9 +12,9 @@
 				background-color: #f0f0f0;
 				margin: 0px auto;
 				max-width: 1150px;
-				/*-webkit-column-count:2;*/ /* Chrome, Safari, Opera */
-				/*-moz-column-count:2;*/ /* Firefox */
-				/*column-count:2;*/
+				-webkit-column-count:2; /* Chrome, Safari, Opera */
+				-moz-column-count:2; /* Firefox */
+				column-count:2;
 			}
 			
 			#overlay {
@@ -65,6 +65,21 @@
 			#filter {
 				display: none;
 			}
+
+			#clock{
+			position:relative;
+			border:solid 1px #ddd;
+		/*	margin-left:auto;
+			margin-right:auto;*/
+			width:150px;
+			color:#fff;
+			background-color:#000;
+			font-size:4em;
+			box-shadow:5px 5px 2px #888;
+			font-family:  sans-serif;
+			/*text-align:left;*/
+
+			}
 			
 			h2 {
 				font-weight : 400;
@@ -94,6 +109,10 @@
 	            break-after: always;
 			}
 
+			p {
+			max-width:150px;
+			}
+
 
 
 
@@ -114,6 +133,7 @@
 
 	<!--  <script language="javascript" type="text/javascript" src="js/p5.js"></script> -->
 	 <script language="javascript" type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.2.5/p5.min.js"></script>
+	 <script language="javascript" type="text/javascript" src="pukechanger.js"></script>
 	  <script language="javascript" type="text/javascript" src="sketch.js"></script>
 	  <script language="javascript" type="text/javascript" src="vehicle.js"></script>
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -144,7 +164,7 @@
 				<canvas id="overlay" width="400" height="300"></canvas>
 				</div>
 			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo();startClock()" id="startbutton"></input>
-			<!-- I also want it to start clock here! onClick="startClock()" value="Start Clock" -->
+			<!-- GameClock from https://github.com/kgaddy/gameclock -->
 			<div id="text">
 				<p id="mouthposition"></p>
 				<p>A game using <a href="https://github.com/auduno/clmtrackr"><em>clmtrackr</em></a></p>
@@ -319,7 +339,7 @@
 			alert('Game Over! Your final score is ' + myp5.score);
 		}
 		var clock = new Clock({
-			time:10000,   //set the time
+			time:20000,   //set the time
 			displayEL:'clock',
 			stopAferTimeout:true,
 			resetAfterTimeout:true,
@@ -336,7 +356,10 @@
 		}
 	</script>
 
-			
+			<p><input type=image src="styles/bacon.png" alt="what kind of money" onclick="changePuke(1)">
+			<p><input type=image src="styles/donut.png" alt="what kind of candy" onclick="changePuke(2)">
+			<p><input type=image src="styles/chicken.png" alt="what kind of rainbow" onclick="changePuke(3)">
+			<p><input type=image src="styles/pacmanghost.png" alt="what kind of sandwich" onclick="changePuke(4)">
 		  </div>
 		</body>
 

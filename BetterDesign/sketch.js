@@ -11,6 +11,10 @@
   sketch.setup = function() {
 
       sketch.marshmallowghost = sketch.loadImage("styles/marshmallowghost.png");
+      sketch.bacon = sketch.loadImage("styles/bacon.png");
+      sketch.donut = sketch.loadImage("styles/donut.png");
+      sketch.chicken = sketch.loadImage("styles/chicken.png");
+      sketch.pacmanghost = sketch.loadImage("styles/pacmanghost.png"); 
       canvas = sketch.createCanvas(400, 300);
       canvas.class("p5canvas");   //references the HTML
         // We are now making random vehicles and storing them in an array
@@ -25,8 +29,8 @@
     sketch.clear();
          myp5.fill(250,25,120);
          myp5.noStroke;
-         myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 20, 20);
-         myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 20, 20);
+         myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 20, 20); //draws a cheek
+         myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 20, 20); //draws a cheek
 
         
         for (var i = 0; i < vehicles.length; i++) {

@@ -11,7 +11,7 @@
 	  // All the usual stuff
 	  this.position = new PVector(x, y);
 	  //this.r = 20;  //the width of the elipse
-	  this.r = 80;  //a good width for the ghost
+	  // this.r = 80;  //a good width for the ghost
 	  this.maxspeed = 4;    // Maximum speed  13 is too high
 	  this.maxforce = 0.2;  // Maximum steering force was .2
 	  this.acceleration = new PVector(0, 0);
@@ -48,7 +48,8 @@
 	// Separation
 	// Method checks for nearby vehicles and steers away
 	Vehicle.prototype.separate = function(vehicles) {
-	  var desiredseparation = this.r*2;
+	  // var desiredseparation = this.r*2;
+	  var desiredseparation = 100;
 	  var sum = new PVector();
 	  var count = 0;
 	  // For every boid in the system, check if it's too close
@@ -130,7 +131,17 @@
 	 myp5.fill(0,0,255);
 	 if (this.isAlive) {
 	 	//myp5.ellipse(0, 0, this.r, this.r);
-		myp5.image(myp5.marshmallowghost, 0, 0, this.r, this.r);
+		// myp5.image(myp5.marshmallowghost, 0, 0, this.r, this.r);
+		myp5.image(myp5.marshmallowghost, 0, 0, 80, 80);
+		  if(display_image === 1) {
+			    myp5.image(myp5.bacon, this.position.x, this.position.y, 50, 50);
+			  } else if (display_image === 2) {
+			    myp5.image(myp5.donut, this.position.x, this.position.y, 50, 50);
+			  } else if (display_image === 3) {
+			    myp5.image(myp5.chicken, this.position.x, this.position.y, 50, 50);
+			  } else if (display_image === 4) {
+			    myp5.image(myp5.pacmanghost, this.position.x, this.position.y, 50, 50);
+			  }
 	 	//myp5.fill(255,0,0);
 	 }
 	 //if this is dead, delete it from the array************************
@@ -142,10 +153,15 @@
 	Vehicle.prototype.borders = function() {
 	 var width = myp5.width;
 	 var height = myp5.height;
-	  if (this.position.x < -this.r) this.position.x =  width+this.r;
-	  if (this.position.y < -this.r) this.position.y = height+this.r;
-	  if (this.position.x >  width+this.r) this.position.x = -this.r;
-	  if (this.position.y > height+this.r) this.position.y = -this.r;
+	  // if (this.position.x < -this.r) this.position.x =  width+this.r;
+	  // if (this.position.y < -this.r) this.position.y = height+this.r;
+	  // if (this.position.x >  width+this.r) this.position.x = -this.r;
+	  // if (this.position.y > height+this.r) this.position.y = -this.r;
+
+	  if (this.position.x < -this) this.position.x =  width+this;
+	  if (this.position.y < -this) this.position.y = height+this;
+	  if (this.position.x >  width+this) this.position.x = -this;
+	  if (this.position.y > height+this) this.position.y = -this;
 	
 
 	}
