@@ -12,7 +12,7 @@
 	  this.position = new PVector(x, y);
 	  //this.r = 20;  //the width of the elipse
 	  // this.r = 80;  //a good width for the ghost
-	  this.maxspeed = 4;    // Maximum speed  13 is too high
+	  this.maxspeed = 2;    // Maximum speed  13 is too high
 	  this.maxforce = 0.2;  // Maximum steering force was .2
 	  this.acceleration = new PVector(0, 0);
 	  this.velocity = new PVector(0, 0);
@@ -49,7 +49,7 @@
 	// Method checks for nearby vehicles and steers away
 	Vehicle.prototype.separate = function(vehicles) {
 	  // var desiredseparation = this.r*2;
-	  var desiredseparation = 100;
+	  var desiredseparation = 50;
 	  var sum = new PVector();
 	  var count = 0;
 	  // For every boid in the system, check if it's too close
@@ -163,10 +163,10 @@
 	  // if (this.position.x >  width+this.r) this.position.x = -this.r;
 	  // if (this.position.y > height+this.r) this.position.y = -this.r;
 
-	  if (this.position.x < -buffer) this.position.x =  width+this;
-	  if (this.position.y < -buffer) this.position.y = height+this;
-	  if (this.position.x >  width+buffer) this.position.x = -this;
-	  if (this.position.y > height+buffer) this.position.y = -this;
+	  if (this.position.x < -this.buffer) this.position.x =  width+this;
+	  if (this.position.y < -this.buffer) this.position.y = height+this;
+	  if (this.position.x >  width+this.buffer) this.position.x = -this;
+	  if (this.position.y > height+this.buffer) this.position.y = -this;
 
 
 	}

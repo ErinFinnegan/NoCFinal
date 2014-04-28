@@ -12,7 +12,7 @@
 	  this.position = new PVector(x, y);
 	  //this.r = 20;  //the width of the elipse
 	  this.r = 80;  //a good width for the ghost
-	  this.maxspeed = 3;    // Maximum speed  13 is too high
+	  this.maxspeed = 2;    // Maximum speed  13 is too high
 	  this.maxforce = 0.2;  // Maximum steering force was .2
 	  this.acceleration = new PVector(0, 0);
 	  this.velocity = new PVector(0, 0);
