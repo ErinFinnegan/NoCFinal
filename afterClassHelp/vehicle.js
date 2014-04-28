@@ -11,7 +11,7 @@
 	  // All the usual stuff
 	  this.position = new PVector(x, y);
 	  //this.r = 20;  //the width of the elipse
-	  this.r = 80;  //a good width for the ghost
+	  // this.r = 80;  //a good width for the ghost
 	  this.maxspeed = 2;    // Maximum speed  13 is too high
 	  this.maxforce = 0.2;  // Maximum steering force was .2
 	  this.acceleration = new PVector(0, 0);
@@ -38,7 +38,7 @@
 	   //if the mouth is closed, seek the nearest jaw line parameter
 	   //if the mouth is open, get as far away as possible
 	   //if you're eaten, disappear (stop displaying?) and user gets a point 
-	
+
 
 	Vehicle.prototype.applyForce = function(force) {
 	  // We could add mass here if we want A = F / M
@@ -48,8 +48,8 @@
 	// Separation
 	// Method checks for nearby vehicles and steers away
 	Vehicle.prototype.separate = function(vehicles) {
-	   var desiredseparation = this.r*2;
-	  //var desiredseparation = 50;  //tried it without this.r
+	  // var desiredseparation = this.r*2;
+	  var desiredseparation = 50;
 	  var sum = new PVector();
 	  var count = 0;
 	  // For every boid in the system, check if it's too close
@@ -64,7 +64,7 @@
 	      sum.add(diff);
 	      count++;            // Keep track of how many
 	    }
-	    
+
 
 	  }
 	  // Average -- divide by how many
@@ -84,7 +84,7 @@
 	  // STEER = DESIRED MINUS VELOCITY
 	Vehicle.prototype.seek = function(target) {
 	  var desired = PVector.sub(target,this.position);  // A vector pointing from the location to the target
-	  
+
 	  // Normalize desired and scale to maximum speed
 	  desired.normalize();
 	  desired.mult(this.maxspeed);
@@ -128,57 +128,49 @@
 	  myp5.pushMatrix();
 	  myp5.translate(this.position.x, this.position.y);
 	  //color was here
-	 myp5.fill(0,0,255);
-	 if (this.isAlive) {
-	 	//myp5.ellipse(0, 0, this.r, this.r);
+	 //myp5.ellipse(0, 0, 64,64);
+	  myp5.imageMode(myp5.CENTER);
+	  if(display_image === 1) {
+		    myp5.image(myp5.bacon, 0,0, 100, 50);
+		  } else if (display_image === 2) {
+		    myp5.image(myp5.donut, 0,0, 50, 50);
+		  } else if (display_image === 3) {
+		    myp5.image(myp5.chicken, 0,0, 50, 50);
+		  } else if (display_image === 4) {
+		    myp5.image(myp5.pacmanghost, 0,0, 50, 50);
+		  } else if (display_image === 0){
+	     	myp5.image(myp5.marshmallowghost, -50,-40, 80, 80);
+		  }
+	 if (!this.isAlive) {
+	 	myp5.fill(255,0,0,100);
+	    //myp5.ellipse(0, 0, 64,64);
+
 		// myp5.image(myp5.marshmallowghost, 0, 0, this.r, this.r);
 		//myp5.image(myp5.marshmallowghost, 0, 0, 80, 80);
-		  // if(display_image === 1) {
-			 //    myp5.image(myp5.bacon, this.position.x, this.position.y, 100, 50);
-			 //  } else if (display_image === 2) {
-			 //    myp5.image(myp5.donut, this.position.x, this.position.y, 50, 50);
-			 //  } else if (display_image === 3) {
-			 //    myp5.image(myp5.chicken, this.position.x, this.position.y, 50, 50);
-			 //  } else if (display_image === 4) {
-			 //    myp5.image(myp5.pacmanghost, this.position.x, this.position.y, 50, 50);
-			 //    } else if (display_image === 0){
-		  //    	myp5.image(myp5.marshmallowghost, 0, 0, 80, 80);
-			   
-			 //  }
-
-	  		  if(display_image === 1) {
-			    myp5.image(myp5.bacon, this.position.x, this.position.y, 100, 25, this.r, this.r);
-			  } else if (display_image === 2) {
-			    myp5.image(myp5.donut, this.position.x, this.position.y, 80, 80, this.r, this.r);
-			  } else if (display_image === 3) {
-			    myp5.image(myp5.chicken, this.position.x, this.position.y, 100, 80, this.r, this.r);
-			  } else if (display_image === 4) {
-			    myp5.image(myp5.pacmanghost, this.position.x, this.position.y, 50, 50, this.r, this.r);
-			    } else if (display_image === 0){
-		     	myp5.image(myp5.marshmallowghost, this.position.x, this.position.y, 80, 80, this.r, this.r);
-			   
-			  }
 	 	//myp5.fill(255,0,0);
 	 }
+
+
+
 	 //if this is dead, delete it from the array************************
 	 myp5.popMatrix();
-		
+
 	}
 
 	// Wraparound
 	Vehicle.prototype.borders = function() {
 	 var width = myp5.width;
 	 var height = myp5.height;
-	  if (this.position.x < -this.r) this.position.x =  width+this.r;
-	  if (this.position.y < -this.r) this.position.y = height+this.r;
-	  if (this.position.x >  width+this.r) this.position.x = -this.r;
-	  if (this.position.y > height+this.r) this.position.y = -this.r;
+	 var buffer = 250;
+	  // if (this.position.x < -this.r) this.position.x =  width+this.r;
+	  // if (this.position.y < -this.r) this.position.y = height+this.r;
+	  // if (this.position.x >  width+this.r) this.position.x = -this.r;
+	  // if (this.position.y > height+this.r) this.position.y = -this.r;
 
-	  // if (this.position.x < -this) this.position.x =  width+this;
-	  // if (this.position.y < -this) this.position.y = height+this;
-	  // if (this.position.x >  width+this) this.position.x = -this;
-	  // if (this.position.y > height+this) this.position.y = -this;
-	
+	  if (this.position.x < -buffer) this.position.x =  width+buffer;
+	  if (this.position.y < -buffer) this.position.y = height+buffer;
+	  if (this.position.x >  width+buffer) this.position.x = -buffer;
+	  if (this.position.y > height+buffer) this.position.y = -buffer;
+
 
 	}
-
