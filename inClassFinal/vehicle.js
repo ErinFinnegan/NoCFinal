@@ -155,7 +155,7 @@
 			  } else if (display_image === 4) {
 			    myp5.image(myp5.pacmanghost, this.position.x, this.position.y, 50, 50, this.r, this.r);
 			    } else if (display_image === 0){
-		     	myp5.image(myp5.marshmallowghost, this.position.x, this.position.y, 0, 0, this.r, this.r);
+		     	myp5.image(myp5.marshmallowghost, this.position.x, this.position.y, 80, 80, this.r, this.r);
 			   
 			  }
 	 	//myp5.fill(255,0,0);
