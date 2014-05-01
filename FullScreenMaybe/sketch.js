@@ -15,7 +15,7 @@
       sketch.donut = sketch.loadImage("styles/donut.png");
       sketch.chicken = sketch.loadImage("styles/chicken.png");
       sketch.pacmanghost = sketch.loadImage("styles/pacmanghost.png"); 
-      canvas = sketch.createCanvas(400, 300);
+      canvas = sketch.createCanvas(640, 480);
       canvas.class("p5canvas");   //references the HTML
         // We are now making random vehicles and storing them in an array
         for (var i = 0; i < 50; i++) {
