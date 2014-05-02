@@ -27,10 +27,6 @@
 
    sketch.draw = function() {
     sketch.clear();
-         myp5.fill(250,25,120);
-         myp5.noStroke;
-         myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 20, 20); //draws a cheek
-         myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 20, 20); //draws a cheek
 
         
         for (var i = vehicles.length-1; i >= 0; i--) {
@@ -43,6 +39,7 @@
            // ghosts.splice(i, 1);
           if (!vehicles[i].isAlive){
             vehicles.splice(i, 1);
+            myp5.score = vehicles.length;
             //sketch.score = sketch.score + 1;
             //console.log("score = " + myp5.score);
             //console.log("yourScore = " + yourScore);
@@ -50,6 +47,11 @@
           
          
         }
+
+       myp5.fill(250,25,120);
+       myp5.noStroke;
+       myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 20, 20); //draws a cheek
+       myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 20, 20); //draws a cheek
       }
  };
 
