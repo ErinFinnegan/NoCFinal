@@ -50,8 +50,8 @@
 
        myp5.fill(250,25,120);
        myp5.noStroke;
-       myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 20, 20); //draws a cheek
-       myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 20, 20); //draws a cheek
+       myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 30, 30); //draws a cheek
+       myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 30, 30); //draws a cheek
       }
  };
 

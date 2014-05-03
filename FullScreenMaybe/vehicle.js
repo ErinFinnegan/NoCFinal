@@ -133,13 +133,13 @@
 	  if(display_image === 1) {
 		    myp5.image(myp5.bacon, 0,0, 100, 50);
 		  } else if (display_image === 2) {
-		    myp5.image(myp5.donut, 0,0, 50, 50);
+		    myp5.image(myp5.donut, 0,0, 100, 100);
 		  } else if (display_image === 3) {
 		    myp5.image(myp5.chicken, 0,0, 50, 50);
 		  } else if (display_image === 4) {
 		    myp5.image(myp5.pacmanghost, 0,0, 50, 50);
 		  } else if (display_image === 0){
-	     	myp5.image(myp5.marshmallowghost, -50,-40, 80, 80);
+	     	myp5.image(myp5.marshmallowghost, -50,-40, 110, 110);
 		  }
 	 if (!this.isAlive) {
 	 	myp5.fill(255,0,0,100);
