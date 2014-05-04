@@ -15,7 +15,7 @@
       sketch.donut = sketch.loadImage("styles/donut.png");
       sketch.chicken = sketch.loadImage("styles/chicken.png");
       sketch.pacmanghost = sketch.loadImage("styles/pacmanghost.png"); 
-      canvas = sketch.createCanvas(400, 300);
+      canvas = sketch.createCanvas(640, 480);
       canvas.class("p5canvas");   //references the HTML
         // We are now making random vehicles and storing them in an array
         for (var i = 0; i < 50; i++) {
@@ -28,7 +28,6 @@
    sketch.draw = function() {
     sketch.clear();
 
-
         
         for (var i = vehicles.length-1; i >= 0; i--) {
           //vehicles[i].checkAlive() === true;
@@ -40,6 +39,7 @@
            // ghosts.splice(i, 1);
           if (!vehicles[i].isAlive){
             vehicles.splice(i, 1);
+            myp5.score = vehicles.length;
             //sketch.score = sketch.score + 1;
             //console.log("score = " + myp5.score);
             //console.log("yourScore = " + yourScore);
@@ -48,10 +48,10 @@
          
         }
 
-        myp5.fill(250,25,120);
-         myp5.noStroke;
-         myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 20, 20); //draws a cheek
-         myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 20, 20); //draws a cheek
+       myp5.fill(250,25,120);
+       myp5.noStroke;
+       myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 30, 30); //draws a cheek
+       myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 30, 30); //draws a cheek
       }
  };
 
