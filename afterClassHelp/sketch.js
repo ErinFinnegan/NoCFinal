@@ -18,7 +18,7 @@
       canvas = sketch.createCanvas(400, 300);
       canvas.class("p5canvas");   //references the HTML
         // We are now making random vehicles and storing them in an array
-        for (var i = 0; i < 50; i++) {
+        for (var i = 0; i < 20; i++) {
           vehicles.push(new Vehicle(350,250));
         }
       console.log("vehicles.length  = " + vehicles.length);

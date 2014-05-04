@@ -133,7 +133,7 @@
 	  if(display_image === 1) {
 		    myp5.image(myp5.bacon, 0,0, 100, 50);
 		  } else if (display_image === 2) {
-		    myp5.image(myp5.donut, 0,0, 50, 50);
+		    myp5.image(myp5.donut, 0,0, 80, 80);
 		  } else if (display_image === 3) {
 		    myp5.image(myp5.chicken, 0,0, 50, 50);
 		  } else if (display_image === 4) {
