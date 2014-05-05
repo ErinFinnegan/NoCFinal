@@ -41,24 +41,21 @@
    sketch.draw = function() {
     sketch.clear();
 
-        sketch.animation1.display(50, 20, 320, 300);
-        sketch.animation1.next();//pass to the next image 
+        // sketch.animation1.display(50, 20, 320, 300);
+        // sketch.animation1.next();//pass to the next image 
 
         
         for (var i = vehicles.length-1; i >= 0; i--) {
-          //vehicles[i].checkAlive() === true;
           vehicles[i].applyBehaviors(vehicles);
           vehicles[i].update();
           vehicles[i].borders();
           vehicles[i].display(); 
-          // if (!ghosts[i].isAlive) {  //at Shiffman's suggestion
-           // ghosts.splice(i, 1);
           if (!vehicles[i].isAlive){
+            sketch.animation1.display(MouthCenterX, MouthCenterY, 100, 100);
+            sketch.animation1.next();//pass to the next image 
             vehicles.splice(i, 1);
             myp5.score = vehicles.length;
-            //sketch.score = sketch.score + 1;
-            //console.log("score = " + myp5.score);
-            //console.log("yourScore = " + yourScore);
+
           }
           
          
@@ -75,11 +72,11 @@
        myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 30, 30); //draws a cheek
       }
 
-      sketch.drawing = function()  { //how it draws the animation
-        animation1.playing = !a.playing; //false then go back to the first drawing 
-        animation1.imageIndex = 1; //go to the first image 
+      // sketch.drawing = function()  { //how it draws the animation  //maybe this loop does nothing?!
+      //   // animation1.playing = !a.playing; //false then go back to the first drawing 
+      //   // animation1.imageIndex = 1; //go to the first image 
   
-      }
+      // }
 
 
  };

@@ -198,6 +198,8 @@
 		        var LeftsideOfmouthY = 0.0;
 		        var RightsideOfmouthX = 0.0;
 		        var RightsideOfmouthY = 0.0;
+		        var MouthCenterX = 0.0;
+		        var MouthCenterY = 0.0;
 		        var yourScore = 0;
 		       // var jawline = []; //it is an array of 0-14 (15 total points)
 		       //I don't actually know how to make an empty javascript array
@@ -304,6 +306,10 @@
 		               LeftsideOfmouthY = (positions[44][1]);
 		               RightsideOfmouthX = (positions[50][0]);
 		               RightsideOfmouthY = (positions[50][1]);
+		               MouthCenterX = (LeftsideOfmouthX + RightsideOfmouthX)/2;
+		               MouthCenterY = (LeftsideOfmouthY + RightsideOfmouthY)/2;
+		               //console.log("MouthCenterX, MouthCenterY" + MouthCenterX + " , " + MouthCenterY);
+
 		               // for (var i = 0; i < 15; i++) {
 			               	//positions [0-14][0] are jawline x
 			               	//positions [0-14][1] are jawline y
