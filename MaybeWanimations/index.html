@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 	<head>
-		<title>EAT ALL THE THINGS</title>
+		<title>OMNOMNOMITRON</title>
 		<meta charset="utf-8">
 		<link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css"> 
 		<style>
@@ -163,7 +163,7 @@
 		<script src="js/Stats.js"></script>
 		<h1><div id="content"></h1>
 			<div id="clock"></div>
-			<h2>Eat the Ghosts</h2>
+			<h2>OMNOMNOMNOMNOM</h2>
 			<div id="container">
 				<video id="videoel" width="640" height="480" preload="auto" loop>
 				</video>
@@ -265,7 +265,7 @@
 					alert("Your browser does not seem to support getUserMedia, using a fallback video instead.");
 				}
 
-				vid.addEventListener('canplay', enablestart, false);
+				vid.addEventListener('canplay', enablestart, false);  //was set to false, changing it didn't matter
 				
 				function startVideo() {
 					// start video
@@ -353,7 +353,8 @@
 		
 	<script>
 		var stopme = function(){
-			alert('Game Over! Your final score is ' + myp5.score);
+			// alert('Game Over! Your final score is ' + myp5.score);
+			console.log('Game Over! Your final score is ' + myp5.score);
 		}
 		var clock = new Clock({
 			time:20000,   //set the time
