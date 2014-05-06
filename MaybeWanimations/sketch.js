@@ -31,7 +31,7 @@
       canvas = sketch.createCanvas(640, 480);
       canvas.class("p5canvas");   //references the HTML
         // We are now making random vehicles and storing them in an array
-        for (var i = 0; i < 50; i++) {
+        for (var i = 0; i < 20; i++) {
           vehicles.push(new Vehicle(350,250));
         }
       console.log("vehicles.length  = " + vehicles.length);
@@ -46,18 +46,20 @@
 
         
         for (var i = vehicles.length-1; i >= 0; i--) {
+
           vehicles[i].applyBehaviors(vehicles);
           vehicles[i].update();
           vehicles[i].borders();
           vehicles[i].display(); 
+
           if (!vehicles[i].isAlive){
-            sketch.animation1.display(MouthCenterX, MouthCenterY, 100, 100);
+            sketch.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100);
             sketch.animation1.next();//pass to the next image 
             vehicles.splice(i, 1);
             myp5.score = vehicles.length;
 
           }
-          
+
          
         }
 
