@@ -2,3 +2,4 @@ Resident Questions:
 
 -- Enable Auto-start
 
+-- Draw animation on top
