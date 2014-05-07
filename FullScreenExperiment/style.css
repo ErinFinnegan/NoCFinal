@@ -13,6 +13,14 @@ video {
   bottom:0;
   width: 100%;
   /*height: 100%;*/
+}
 
-
+h2 {
+    position:absolute;
+    left:50px;
+    top:50px;
+    z-index:1;
+    color:#ffffff;
+    font-weight:bold;
+    font-family:sans-serif;
 };
