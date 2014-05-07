@@ -46,31 +46,16 @@
 		<script src="js/svmfilter_fft.js"></script>
 		<script src="js/mossefilter.js"></script>
 		<script src="js/Stats.js"></script> 
-
-	<!-- BigVideo Dependencies -->
-
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-		<script>window.jQuery || document.write('<script src="js/jquery-1.7.2.min.js"><\/script>')</script>
-		<script src="js/jquery.transit.min.js"></script>
-		<!-- <script src="js/jquery-ui-1.8.22.custom.min.js"></script> -->
-		<script src="js/jquery.imagesloaded.min.js"></script>
-		<script src="http://vjs.zencdn.net/c/video.js"></script>
-
-
-	<!-- BigVideo -->
-		<script src="js/bigvideo.js"></script>
 		<h1><div id="content"></h1>
 			<div id="clock"></div>
 			<h2>OMNOMNOMNOMNOM</h2>
-				<div id="wrapper">
-					<div id="container">
-						<video id="videoel" width="640" height="480" preload="auto" loop>
-						</video>
-						<canvas id="p5canvas" width="640" height="480"></canvas>
-						<canvas id="overlay" width="640" height="480"></canvas>
-						</div>
-					<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo();startClock()" id="startbutton"></input>
+			<div id="container">
+				<video id="videoel" width="640" height="480" preload="auto" loop>
+				</video>
+				<canvas id="p5canvas" width="640" height="480"></canvas>
+				<canvas id="overlay" width="640" height="480"></canvas>
 				</div>
+			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo();startClock()" id="startbutton"></input>
 			<!-- GameClock from https://github.com/kgaddy/gameclock -->
 			<div id="text">
 				<p id="mouthposition"></p>
