@@ -3,7 +3,7 @@
 	<head>
 		<title>OMNOMNOMITRON</title>
 		<meta charset="utf-8">
-		<link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css"> 
+		<!-- <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css">  -->
 		<style>
 			@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 			
@@ -11,10 +11,10 @@
 				font-family: 'Lato';
 				background-color: #f0f0f0;
 				margin: 0px auto;
-				max-width: 1150px;
-				-webkit-column-count:2; /* Chrome, Safari, Opera */
-				-moz-column-count:2; /* Firefox */
-				column-count:2;
+				/*max-width: 1150px;*/
+				/*-webkit-column-count:2;  Chrome, Safari, Opera */
+				/*-moz-column-count:2; /* Firefox */
+				/*column-count:2;*/
 			}
 			
 			#overlay {
@@ -38,8 +38,8 @@
 			
 			#container {
 				position : relative;
-				/*width : 370px;*/
-				/*margin : 0px auto;*/
+				width : 370px;
+				margin : 0px auto;
 			}
 			
 			#content {
@@ -47,7 +47,7 @@
 				margin-left : 100px;
 				margin-right : 100px;
 				column-span: all;
-				/*max-width: 950px;*/
+				max-width: 950px;
 			}
 			
 			#p5canvas {
@@ -69,8 +69,8 @@
 			#clock{
 			position:relative;
 			border:solid 1px #ddd;
-		/*	margin-left:auto;
-			margin-right:auto;*/
+			margin-left:auto;
+			margin-right:auto;
 			width:150px;
 			color:#fff;
 			background-color:#000;
@@ -81,9 +81,9 @@
 
 			}
 			
-			h2 {
+	/*		h2 {
 				font-weight : 400;
-			}
+			}*/
 
 			.nogum {
 				display : none;
@@ -102,17 +102,17 @@
 				display : block;
 			}
 
-			hr {
+/*			hr {
 				column-span: all;
 				-webkit-break-after: always;
 	            -moz-break-after: always;
 	            break-after: always;
-			}
-
+			}*/
+/*
 			p {
 			max-width:150px;
 			align: right;
-			}
+			}*/
 
 			/*image {
 				align: right;
@@ -161,7 +161,7 @@
 		<script src="js/svmfilter_webgl.js"></script>
 		<script src="js/svmfilter_fft.js"></script>
 		<script src="js/mossefilter.js"></script>
-		<script src="js/Stats.js"></script>
+		<script src="js/Stats.js"></script> 
 		<h1><div id="content"></h1>
 			<div id="clock"></div>
 			<h2>OMNOMNOMNOMNOM</h2>
@@ -183,7 +183,7 @@
 					</p>
 				</div>
 			</div>
-			<a href="https://github.com/ErinFinnegan/NoC-Midterm"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>
+		<!-- 	<a href="https://github.com/ErinFinnegan/NoC-Midterm"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a> -->
 			<script>
 				var vid = document.getElementById('videoel');  //was videoInput in the other code
 				var overlay = document.getElementById('overlay');
@@ -210,11 +210,7 @@
 		        
 				var ctrack = new clm.tracker({useWebGL : true});
 				ctrack.init(pModel);
-				
-				stats = new Stats();
-				stats.domElement.style.position = 'absolute';
-				stats.domElement.style.top = '0px';
-				document.getElementById('container').appendChild( stats.domElement );
+			
 				
 				function enablestart() {
 					var startbutton = document.getElementById('startbutton');
@@ -278,7 +274,7 @@
 					// start tracking
 					ctrack.start(vid);
 					// start loop to draw face
-					//drawLoop();
+					drawLoop();
 					console.log('Video Start was clicked!!!!!!!');
 					videostarted = true;
 					//Assign audio to soundEfx
