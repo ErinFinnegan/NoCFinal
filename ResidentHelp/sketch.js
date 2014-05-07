@@ -57,7 +57,8 @@
             soundEfx.play();
             sketch.animation1.next();//pass to the next image 
             vehicles.splice(i, 1);
-            myp5.score = vehicles.length;
+            myp5.score = (myp5.score + 1);
+            console.log('score = ' + myp5.score);
 
           }
 
