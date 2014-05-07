@@ -210,10 +210,10 @@
 				
 				function drawLoop() {
 					requestAnimFrame(drawLoop);
-					overlayCC.clearRect(0, 0, 400, 300);
+					overlayCC.clearRect(0, 0, 640, 480);  //when you set width and height you also have to clear this part
 					//psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
 					if (ctrack.getCurrentPosition()) {
-						ctrack.draw(overlay);  // comment this out not to see the mask
+						//ctrack.draw(overlay);  // comment this out not to see the mask
 						//console.log('still tracking the overlay - this is the draw loop');
 						//console.log('value = ' + value);
 					}
@@ -226,9 +226,6 @@
 
 			</script>
 	<script src="js/gameclock.js"></script>
-<!-- 			<input type="button" id="startClock" onClick="startClock()" value="Start Clock"/>  -->
-<!-- 		    <input type="button" id="stopClock" onClick="stopClock()" value="Stop Clock"/>
-		   	<input type="button" id="stopClock" onClick="resetClock()" value="Reset Clock"/> -->
 		
 	<script>
 		var stopme = function(){
