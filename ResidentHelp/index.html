@@ -4,124 +4,8 @@
 		<title>OMNOMNOMITRON</title>
 		<meta charset="utf-8">
 		<!-- <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css">  -->
-		<style>
-			@import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
+		<link href="styles/erinstyle.css" rel="stylesheet" type="text/css">
 			
-			body {
-				font-family: 'Lato';
-				background-color: #f0f0f0;
-				margin: 0px auto;
-				/*max-width: 1150px;*/
-				/*-webkit-column-count:2;  Chrome, Safari, Opera */
-				/*-moz-column-count:2; /* Firefox */
-				/*column-count:2;*/
-			}
-			
-			#overlay {
-				position: absolute;
-				top: 0px;
-				left: 0px;
-				-o-transform : scaleX(-1);
-				-webkit-transform : scaleX(-1);
-				transform : scaleX(-1);
-				-ms-filter : fliph; /*IE*/
-				filter : fliph; /*IE*/
-			}
-
-			#videoel {
-				-o-transform : scaleX(-1);
-				-webkit-transform : scaleX(-1);
-				transform : scaleX(-1);
-				-ms-filter : fliph; /*IE*/
-				filter : fliph; /*IE*/
-			}
-			
-			#container {
-				position : relative;
-				width : 370px;
-				margin : 0px auto;
-			}
-			
-			#content {
-				margin-top : 70px;
-				margin-left : 100px;
-				margin-right : 100px;
-				column-span: all;
-				max-width: 950px;
-			}
-			
-			#p5canvas {
-				display: block;
-				position: absolute;
-				top: 0px;
-				left: 0px;
-				-o-transform : scaleX(-1);
-				-webkit-transform : scaleX(-1);
-				transform : scaleX(-1);
-				-ms-filter : fliph; /*IE*/
-				filter : fliph; /*IE*/
-			}
-			
-			#filter {
-				display: none;
-			}
-
-			#clock{
-			position:relative;
-			border:solid 1px #ddd;
-			margin-left:auto;
-			margin-right:auto;
-			width:150px;
-			color:#fff;
-			background-color:#000;
-			font-size:4em;
-			box-shadow:5px 5px 2px #888;
-			font-family:  sans-serif;
-			/*text-align:left;*/
-
-			}
-			
-	/*		h2 {
-				font-weight : 400;
-			}*/
-
-			.nogum {
-				display : none;
-			}
-			
-			.btn {
-				font-family: 'Lato';
-				font-size: 16px;
-			}
-
-			.hide {
-				display : none;
-			}
-
-			.nohide {
-				display : block;
-			}
-
-/*			hr {
-				column-span: all;
-				-webkit-break-after: always;
-	            -moz-break-after: always;
-	            break-after: always;
-			}*/
-/*
-			p {
-			max-width:150px;
-			align: right;
-			}*/
-
-			/*image {
-				align: right;
-			}*/
-
-
-
-
-		</style>
 		<script type="text/javascript">
 
 			var _gaq = _gaq || [];
@@ -210,7 +94,12 @@
 		        
 				var ctrack = new clm.tracker({useWebGL : true});
 				ctrack.init(pModel);
-			
+
+				stats = new Stats();
+				stats.domElement.style.position = 'absolute';
+				stats.domElement.style.top = '0px';
+				// document.getElementById('container').appendChild( stats.domElement );
+				//stats must be defined, but you don't have to draw it.
 				
 				function enablestart() {
 					var startbutton = document.getElementById('startbutton');
@@ -281,15 +170,6 @@
 				    soundEfx = document.getElementById("soundEfx");
 				}
 
-				// vid.width  = window.innerWidth;
-				// vid.height = window.innerHeight;
-				// overlay.width  = window.innerWidth;
-				// overlay.height = window.innerHeight;
-				// p5canvas.width  = window.innerWidth;
-				// p5canvas.height = window.innerHeight;
-				// overlayCC.width  = window.innerWidth;
-				// overlayCC.height = window.innerHeight;
-
 
 				function positionLoop() {
 		          requestAnimationFrame(positionLoop);
@@ -309,14 +189,6 @@
 		               RightsideOfmouthY = (positions[50][1]);
 		               MouthCenterX = (LeftsideOfmouthX + RightsideOfmouthX)/2;
 		               MouthCenterY = (LeftsideOfmouthY + RightsideOfmouthY)/2;
-		               //console.log("MouthCenterX, MouthCenterY" + MouthCenterX + " , " + MouthCenterY);
-
-		               // for (var i = 0; i < 15; i++) {
-			               	//positions [0-14][0] are jawline x
-			               	//positions [0-14][1] are jawline y
-			               	//["+positions[p][0].toFixed(2)+","+positions[p][1].toFixed(2)+"]
-						//look for points along the jawline and go for a random point.
-		               //maybe the jawline is a dictionary of coordinates?
 		               }
 		               
 		            }
@@ -348,8 +220,8 @@
 				}
 				
 				// update stats on every iteration
-				document.addEventListener('clmtrackrIteration', function(event) {
-					stats.update();
+				document.addEventListener('clmtrackrIteration', function(event) {   //this line is vital
+					stats.update();   //this is apparently necessary
 				}, false);
 
 			</script>
