@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<title>OMNOMNOMITRON</title>
+		<meta charset="utf-8">
+		<!-- <link href="styles/bootstrap.min.css" rel="stylesheet" type="text/css">  -->
+		<link href="styles/erinstyle.css" rel="stylesheet" type="text/css">
+			
+		<script type="text/javascript">
+
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-32642923-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+
+	<!--  <script language="javascript" type="text/javascript" src="js/p5.js"></script> -->
+	 <script language="javascript" type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/p5.js/0.2.5/p5.min.js"></script>
+	 <script language="javascript" type="text/javascript" src="pukechanger.js"></script>
+	  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+	  <script language="javascript" type="text/javascript" src="vehicle.js"></script>
+	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<script src="js/animation.js"></script>  <!-- to draw the gifs-->
+		<audio id="soundEfx" src="sfx/chew1.wav" style="display: none;"></audio> <!-- for sound fx -->
+		<script src="js/utils.js"></script>
+		<script src="js/jsfeat-min.js"></script>
+		<script src="js/frontalface.js"></script>
+		<script src="js/jsfeat_detect.js"></script>
+		<script src="js/numeric-1.2.6.min.js"></script>
+		<script src="js/mosse.js"></script>
+		<script src="js/left_eye_filter.js"></script>
+		<script src="js/right_eye_filter.js"></script>
+		<script src="js/nose_filter.js"></script>
+		<script src="models/model_pca_20_svm.js"></script>
+		<script src="js/clm.js"></script>
+		<script src="js/svmfilter_webgl.js"></script>
+		<script src="js/svmfilter_fft.js"></script>
+		<script src="js/mossefilter.js"></script>
+		<script src="js/Stats.js"></script> 
+		<h1><div id="content"></h1>
+			<div id="clock"></div>
+			<h2>OMNOMNOMNOMNOM</h2>
+			<div id="container">
+				<video id="videoel" width="640" height="480" preload="auto" loop>
+				</video>
+				<canvas id="p5canvas" width="640" height="480"></canvas>
+				<canvas id="overlay" width="640" height="480"></canvas>
+				</div>
+			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo();startClock()" id="startbutton"></input>
+			<!-- GameClock from https://github.com/kgaddy/gameclock -->
+			<div id="text">
+				<p id="mouthposition"></p>
+				<p>A game using <a href="https://github.com/auduno/clmtrackr"><em>clmtrackr</em></a></p>
+				<p>In Google Chrome, with a computer that supports WebGL.... and allow the page to use your webcam.</p>
+				<div id="nogum" class="nogum">
+					<p>
+						There was some problem trying to capture your webcamera, please check that your browser supports WebRTC. Using a fallback video instead. 
+					</p>
+				</div>
+			</div>
+		<!-- 	<a href="https://github.com/ErinFinnegan/NoC-Midterm"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png" alt="Fork me on GitHub"></a> -->
+	<script type="text/javascript" src="itallhappenshere.js"></script>
+	<script src="js/gameclock.js"></script>
+		
+	<script>
+		var stopme = function(){
+			// alert('Game Over! Your final score is ' + myp5.score);
+			console.log('Game Over! Your final score is ' + myp5.score);
+		}
+		var clock = new Clock({
+			time:20000,   //set the time
+			displayEL:'clock',
+			stopAferTimeout:true,
+			resetAfterTimeout:true,
+			timeoutCallBack:stopme
+		});
+		function stopClock(){
+		    clock.StopClock();
+		}
+		function startClock(){
+		   clock.StartClock(); 
+		}
+		function resetClock(){
+		   clock.ResetClock(); 
+		}
+	</script>
+
+			<p><input type=image src="styles/bacon.png" alt="what kind of money" onclick="changePuke(1)" align="left">
+			<p><input type=image src="styles/donut.png" alt="what kind of candy" onclick="changePuke(2)" align="center">
+			<p><input type=image src="styles/chicken.png" alt="what kind of rainbow" onclick="changePuke(3)" align="center">
+			<p><input type=image src="styles/pacmanghost.png" alt="what kind of sandwich" onclick="changePuke(4)" align="left">
+		  </div>
+		</body>
+
+</html>
