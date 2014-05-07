@@ -51,6 +51,7 @@
 				margin-right : 100px;
 				column-span: all;
 				max-width: 950px;*/
+				z-index:1;
 			}
 			
 			#p5canvas {
@@ -73,14 +74,14 @@
 
 			#clock{
 			position:relative;
-			border:solid 1px #ddd;
+			/*border:solid 1px #ddd;*/
 			margin-left:auto;
-			margin-right:auto;
+			/*margin-right:auto;*/
 			width:150px;
 			color:#fff;
-			background-color:#000;
+			/*background-color:#000;*/
 			font-size:4em;
-			box-shadow:5px 5px 2px #888;
+			/*box-shadow:5px 5px 2px #888;*/
 			font-family:  sans-serif;
 			z-index:1;
 			/*text-align:left;*/
@@ -95,9 +96,10 @@
 				display : none;
 			}
 			
-			.btn {
+			btn {
 				font-family: 'Lato';
 				font-size: 16px;
+				z-index:2;
 			}
 
 			.hide {
@@ -114,15 +116,17 @@
 	            -moz-break-after: always;
 	            break-after: always;
 			}*/
-/*
+
 			p {
 			max-width:150px;
 			align: right;
-			}*/
+			z-index:1;			
+			}
 
-			/*image {
+			image {
 				align: right;
-			}*/
+				z-index:1;
+			}
 
 
 
