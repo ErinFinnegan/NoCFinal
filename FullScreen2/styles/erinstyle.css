@@ -6,7 +6,7 @@
 				background-color: #f0f0f0;
 				/*margin: 0px auto;*/
 				
-				/*max-width: 1150px;*/
+				max-width: 100%;
 				/*-webkit-column-count:2;  Chrome, Safari, Opera */
 				/*-moz-column-count:2; /* Firefox */
 				/*column-count:2;*/
@@ -26,11 +26,11 @@
 			}
 
 			#videoel {
-			/*-o-transform : scaleX(-1);*/
-			/*-webkit-transform : scaleX(-1);*/
-			/*transform : scaleX(-1);*/
-			/*-ms-filter : fliph;*/ /*IE*/
-			/*filter : fliph;*/ /*IE*/
+			-o-transform : scaleX(-1);
+			-webkit-transform : scaleX(-1);
+			transform : scaleX(-1);
+			-ms-filter : fliph; /*IE*/
+			filter : fliph; /*IE*/
 				position: fixed;
 				width: 100%;
 				top:0;
@@ -40,17 +40,17 @@
 			}
 			
 			#container {
-			/*	position : relative;
-				width : 370px;
-				margin : 0px auto;*/
+				position : absolute;
+				width : 100%;
+				margin : 0px auto;
 			}
 			
 			#content {
-			/*	margin-top : 70px;
+				margin-top : 70px;
 				margin-left : 100px;
 				margin-right : 100px;
 				column-span: all;
-				max-width: 950px;*/
+				max-width: 100%;
 				z-index:1;
 			}
 			
@@ -60,11 +60,11 @@
 				top: 0px;
 				left: 0px;
 				width: 100%;
-				/*-o-transform : scaleX(-1);
+				-o-transform : scaleX(-1);
 				-webkit-transform : scaleX(-1);
-				transform : scaleX(-1);*/
-				/*-ms-filter : fliph; /*IE*/*/
-				/*filter : fliph; /*IE*/*/
+				transform : scaleX(-1);
+				-ms-filter : fliph; /*IE*/
+				filter : fliph; /*IE*/
 				z-index:1;
 			}
 			
@@ -73,7 +73,7 @@
 			}
 
 			#clock{
-			position:relative;
+			position:absolute;
 			/*border:solid 1px #ddd;*/
 			margin-left:auto;
 			/*margin-right:auto;*/
@@ -96,10 +96,10 @@
 				display : none;
 			}
 			
-			btn {
+			.btn {
 				font-family: 'Lato';
 				font-size: 16px;
-				z-index:2;
+				z-index:100;
 			}
 
 			.hide {
@@ -109,13 +109,6 @@
 			.nohide {
 				display : block;
 			}
-
-/*			hr {
-				column-span: all;
-				-webkit-break-after: always;
-	            -moz-break-after: always;
-	            break-after: always;
-			}*/
 
 			p {
 			max-width:150px;
