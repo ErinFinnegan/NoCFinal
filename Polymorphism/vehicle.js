@@ -6,12 +6,8 @@
 
 
 	function Vehicle(x, y) {
-	  //var isAlive = new Boolean(true);
 	  this.isAlive = true;
-	  // All the usual stuff
 	  this.position = new PVector(x, y);
-	  //this.r = 20;  //the width of the elipse
-	  // this.r = 80;  //a good width for the ghost
 	  this.maxspeed = 2;    // Maximum speed  13 is too high
 	  this.maxforce = 0.2;  // Maximum steering force was .2
 	  this.acceleration = new PVector(0, 0);
@@ -122,32 +118,18 @@
 
 
 	Vehicle.prototype.display = function() {
-	//this is where the prototypes get displayed... how do we stop displaying one at a time?
+
 	  myp5.stroke(255, 255, 255);
 	  myp5.strokeWeight(1);
 	  myp5.pushMatrix();
 	  myp5.translate(this.position.x, this.position.y);
-	  //color was here
-	 //myp5.ellipse(0, 0, 64,64);
-	  myp5.imageMode(myp5.CENTER);
-	  if(display_image === 1) {
-		    myp5.image(myp5.bacon, 0,0, 100, 50);
-		  } else if (display_image === 2) {
-		    myp5.image(myp5.donut, 0,0, 100, 100);
-		  } else if (display_image === 3) {
-		    myp5.image(myp5.chicken, 0,0, 50, 50);
-		  } else if (display_image === 4) {
-		    myp5.image(myp5.pacmanghost, 0,0, 50, 50);
-		  } else if (display_image === 0){
-	     	myp5.image(myp5.marshmallowghost, -50,-40, 110, 110);
-		  }
+	  myp5.image(myp5.marshmallowghost, -50,-40, 110, 110);
+
+	
 	 if (!this.isAlive) {
 	 	myp5.fill(255,0,0,100);
 	    //myp5.ellipse(0, 0, 64,64);
 
-		// myp5.image(myp5.marshmallowghost, 0, 0, this.r, this.r);
-		//myp5.image(myp5.marshmallowghost, 0, 0, 80, 80);
-	 	//myp5.fill(255,0,0);
 	 }
 
 
@@ -162,10 +144,6 @@
 	 var width = myp5.width;
 	 var height = myp5.height;
 	 var buffer = 250;
-	  // if (this.position.x < -this.r) this.position.x =  width+this.r;
-	  // if (this.position.y < -this.r) this.position.y = height+this.r;
-	  // if (this.position.x >  width+this.r) this.position.x = -this.r;
-	  // if (this.position.y > height+this.r) this.position.y = -this.r;
 
 	  if (this.position.x < -buffer) this.position.x =  width+buffer;
 	  if (this.position.y < -buffer) this.position.y = height+buffer;

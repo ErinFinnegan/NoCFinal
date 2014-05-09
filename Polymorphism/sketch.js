@@ -31,8 +31,15 @@
       canvas = sketch.createCanvas(640, 480);
       canvas.class("p5canvas");   //references the HTML
         // We are now making random vehicles and storing them in an array
-        for (var i = 0; i < 20; i++) {
+        var r = myp5.random(1); 
+        for (var i = 0; i < 10; i++) {
           vehicles.push(new Vehicle(350,250));
+             if (r < 0.5) {
+               vehicles.push(new Vehicle(250,250));
+             } else {
+              vehicles.push(new ChildClass(350,250));
+             }
+
         }
       console.log("vehicles.length  = " + vehicles.length);
       myp5.score = 0;
