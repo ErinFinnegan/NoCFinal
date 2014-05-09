@@ -31,12 +31,13 @@
       canvas = sketch.createCanvas(640, 480);
       canvas.class("p5canvas");   //references the HTML
         // We are now making random vehicles and storing them in an array
-        var r = myp5.random(1); 
+         
         for (var i = 0; i < 10; i++) {
-          vehicles.push(new Vehicle(350,250));
+          var r = myp5.random(1);
+          // // vehicles.push(new Vehicle(350,250));
              if (r < 0.5) {
-               vehicles.push(new Vehicle(250,250));
-             } else {
+              vehicles.push(new Vehicle(250,250));
+              } else {
               vehicles.push(new ChildClass(350,250));
              }
 
@@ -47,9 +48,6 @@
 
    sketch.draw = function() {
     sketch.clear();
-
-        // sketch.animation1.display(50, 20, 320, 300);
-        // sketch.animation1.next();//pass to the next image 
 
         
         for (var i = vehicles.length-1; i >= 0; i--) {
@@ -62,6 +60,7 @@
           if (!vehicles[i].isAlive){
             sketch.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100);
             soundEfx.play();
+            //this is the part where I need to change the animation *********************
             sketch.animation1.next();//pass to the next image 
             vehicles.splice(i, 1);
             myp5.score = (myp5.score + 1);
@@ -83,11 +82,6 @@
        myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 30, 30); //draws a cheek
       }
 
-      // sketch.drawing = function()  { //how it draws the animation  //maybe this loop does nothing?!
-      //   // animation1.playing = !a.playing; //false then go back to the first drawing 
-      //   // animation1.imageIndex = 1; //go to the first image 
-  
-      // }
 
 
  };
