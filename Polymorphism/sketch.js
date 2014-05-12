@@ -3,12 +3,13 @@
 
   var s = function( sketch ) {
 
+var animation1;
+
+
       var videostarted = false;
       var vehicles = [];
      // var yourScore = 0;
       var score = 0;
-
-      var animation1;
 
       var name = "donut";
       var name2 = "donutdeath";
@@ -32,7 +33,7 @@
       canvas.class("p5canvas");   //references the HTML
         // We are now making random vehicles and storing them in an array
          
-        for (var i = 0; i < 10; i++) {
+        for (var i = 0; i < 5; i++) {
           var r = myp5.random(1);
           // // vehicles.push(new Vehicle(350,250));
              if (r < 0.5) {
@@ -58,13 +59,16 @@
           vehicles[i].display(); 
 
           if (!vehicles[i].isAlive){
-            sketch.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100);
-            soundEfx.play();
-            //this is the part where I need to change the animation *********************
-            sketch.animation1.next();//pass to the next image 
-            vehicles.splice(i, 1);
-            myp5.score = (myp5.score + 1);
-            console.log('score = ' + myp5.score);
+       
+               vehicles[i].die(); 
+               soundEfx.play();
+            // soundEfx.play();
+            // sketch.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
+            // //this is the part where I need to change the animation *********************
+            // sketch.animation1.next();//pass to the next image 
+            // vehicles.splice(i, 1);
+            // myp5.score = (myp5.score + 1);
+            // console.log('score = ' + myp5.score);
 
           }
 

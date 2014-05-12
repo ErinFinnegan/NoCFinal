@@ -8,7 +8,7 @@
 	function Vehicle(x, y) {
 	  this.isAlive = true;
 	  this.position = new PVector(x, y);
-	  this.maxspeed = 2;    // Maximum speed  13 is too high
+	  this.maxspeed = 5;    // Maximum speed  13 is too high
 	  this.maxforce = 0.2;  // Maximum steering force was .2
 	  this.acceleration = new PVector(0, 0);
 	  this.velocity = new PVector(0, 0);
@@ -31,9 +31,7 @@
 			seekForce.mult(80);  //make them avoid the face faster!!
 		}
 	}
-	   //if the mouth is closed, seek the nearest jaw line parameter
-	   //if the mouth is open, get as far away as possible
-	   //if you're eaten, disappear (stop displaying?) and user gets a point 
+
 
 
 	Vehicle.prototype.applyForce = function(force) {
@@ -150,5 +148,14 @@
 	  if (this.position.x >  width+buffer) this.position.x = -buffer;
 	  if (this.position.y > height+buffer) this.position.y = -buffer;
 
+	}
 
+	Vehicle.prototype.die = function() {
+  
+            animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
+            //this is the part where I need to change the animation *********************
+            animation1.next();//pass to the next image 
+            vehicles.splice(i, 1);
+            myp5.score = (myp5.score + 1);
+            console.log('score = ' + myp5.score);
 	}
