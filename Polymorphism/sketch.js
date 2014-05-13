@@ -3,7 +3,7 @@
 
   var s = function( sketch ) {
 
-var animation1;
+      var animation1; //not sure I need to put this here
 
 
       var videostarted = false;
@@ -16,7 +16,11 @@ var animation1;
 
       var totalframes = 8;
 
+      var animation1;
+
   sketch.setup = function() {
+
+
 
       sketch.marshmallowghost = sketch.loadImage("styles/marshmallowghost.png");
       sketch.bacon = sketch.loadImage("styles/bacon.png");
