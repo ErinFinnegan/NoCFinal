@@ -1,16 +1,16 @@
 // The Nature of Code, Daniel Shiffman, http://natureofcode.com
 
 // Child class constructor
-var ChildClass = function(position) {
+var BaconClass = function(position) {
   Vehicle.call(this, position);
 };
 
 // Inherit from the parent class
-ChildClass.prototype = Object.create(Vehicle.prototype);
-ChildClass.prototype.constructor = ChildClass;
+BaconClass.prototype = Object.create(Vehicle.prototype);
+BaconClass.prototype.constructor = BaconClass;
 
 // Override the display method
-  ChildClass.prototype.display = function() {
+  BaconClass.prototype.display = function() {
   //this is where the prototypes get displayed... how do we stop displaying one at a time?
     myp5.stroke(255, 255, 255);
     myp5.strokeWeight(1);
