@@ -7,7 +7,7 @@
 
 
       var videostarted = false;
-      var vehicles = [];
+      sketch.vehicles = [];
      // var yourScore = 0;
       var score = 0;
 
@@ -41,13 +41,13 @@
           var r = myp5.random(1);
           // // vehicles.push(new Vehicle(350,250));
              if (r < 0.5) {
-              vehicles.push(new Vehicle(250,250));
+              sketch.vehicles.push(new Vehicle(250,250));
               } else {
-              vehicles.push(new ChildClass(350,250));
+              sketch.vehicles.push(new ChildClass(350,250));
              }
 
         }
-      console.log("vehicles.length  = " + vehicles.length);
+      console.log("sketch.vehicles.length  = " + sketch.vehicles.length);
       myp5.score = 0;
       }
 
@@ -55,16 +55,16 @@
     sketch.clear();
 
         
-        for (var i = vehicles.length-1; i >= 0; i--) {
+        for (var i = sketch.vehicles.length-1; i >= 0; i--) {
 
-          vehicles[i].applyBehaviors(vehicles);
-          vehicles[i].update();
-          vehicles[i].borders();
-          vehicles[i].display(); 
+          sketch.vehicles[i].applyBehaviors(sketch.vehicles);
+          sketch.vehicles[i].update();
+          sketch.vehicles[i].borders();
+          sketch.vehicles[i].display(); 
 
-          if (!vehicles[i].isAlive){
+          if (!sketch.vehicles[i].isAlive){
        
-               vehicles[i].die(); 
+               sketch.vehicles[i].die(); 
                soundEfx.play();
             // soundEfx.play();
             // sketch.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation

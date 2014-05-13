@@ -16,7 +16,7 @@
 
 
 	Vehicle.prototype.applyBehaviors = function(vehicles) {
-	   var separateForce = this.separate(vehicles);
+	   var separateForce = this.separate(myp5.vehicles);
 	   var seekForce = this.seek(new PVector(mouthX,bottomlip));
 	   //separate Force is better on 4 for the ellipses, but lower for the ghosts
 	   separateForce.mult(1);  //how fast do they run away
@@ -40,7 +40,7 @@
 	}
 
 	// Separation
-	// Method checks for nearby vehicles and steers away
+	// Method checks for nearby myp5.vehicles and steers away
 	Vehicle.prototype.separate = function(vehicles) {
 	  // var desiredseparation = this.r*2;
 	  var desiredseparation = 20;
@@ -48,11 +48,11 @@
 	  var count = 0;
 	  // For every boid in the system, check if it's too close
 	  for (var i = 0; i < vehicles.length; i++) {
-	    var d = PVector.dist(this.position, vehicles[i].position);
+	    var d = PVector.dist(this.position, myp5.vehicles[i].position);
 	    // If the distance is greater than 0 and less than an arbitrary amount (0 when you are yourself)
 	    if ((d > 0) && (d < desiredseparation)) {
 	      // Calculate vector pointing away from neighbor
-	      var diff = PVector.sub(this.position, vehicles[i].position);
+	      var diff = PVector.sub(this.position, myp5.vehicles[i].position);
 	      diff.normalize();
 	      diff.div(d);        // Weight by distance
 	      sum.add(diff);
@@ -157,7 +157,7 @@
             myp5.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
             //this is the part where I need to change the animation *********************
             myp5.animation1.next();//pass to the next image 
-            vehicles.splice(i, 1);
+            myp5.vehicles.splice(i, 1);
             myp5.score = (myp5.score + 1);
             console.log('score = ' + myp5.score);
 	}

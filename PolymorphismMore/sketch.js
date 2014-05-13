@@ -7,7 +7,7 @@
 
 
       var videostarted = false;
-      var vehicles = [];
+      sketch.vehicles = [];
      // var yourScore = 0;
       var score = 0;
 
@@ -18,7 +18,9 @@
 
       var animation1;
 
-      var foodArray = Array(DonutClass(), ChickenClass(), PacManClass(), BaconClass());
+      var foodArray = new Array(DonutClass, ChickenClass, PacManClass, BaconClass);
+
+
 
   sketch.setup = function() {
 
@@ -37,21 +39,21 @@
 
       canvas = sketch.createCanvas(640, 480);
       canvas.class("p5canvas");   //references the HTML
-        // We are now making random vehicles and storing them in an array
+        // We are now making random sketch.vehicles and storing them in an array
          
         for (var i = 0; i < 5; i++) {
           //var r = myp5.random(1);
-          var item = foodArray[Math.floor(Math.random()*foodArray.length)];
-          // // vehicles.push(new Vehicle(350,250));
+          var index = myp5.floor(myp5.random(0,foodArray.length));
+          // // sketch.vehicles.push(new Vehicle(350,250));
             // if (r < 0.5) {
-              console.log(item);
-              vehicles.push(new item(250,250));
+              console.log(index);
+              sketch.vehicles.push(new foodArray[index]());
               // } else {
-              //   vehicles.push(new ChickenClass(350,250));
+              //   sketch.vehicles.push(new ChickenClass(350,250));
               //  } 
   
         }
-      console.log("vehicles.length  = " + vehicles.length);
+      console.log("sketch.vehicles.length  = " + sketch.vehicles.length);
       myp5.score = 0;
       }
 
@@ -59,22 +61,22 @@
     sketch.clear();
 
         
-        for (var i = vehicles.length-1; i >= 0; i--) {
+        for (var i = sketch.vehicles.length-1; i >= 0; i--) {
 
-          vehicles[i].applyBehaviors(vehicles);
-          vehicles[i].update();
-          vehicles[i].borders();
-          vehicles[i].display(); 
+          sketch.vehicles[i].applyBehaviors(sketch.vehicles);
+          sketch.vehicles[i].update();
+          sketch.vehicles[i].borders();
+          sketch.vehicles[i].display(); 
 
-          if (!vehicles[i].isAlive){
+          if (!sketch.vehicles[i].isAlive){
        
-               vehicles[i].die(); 
+               sketch.vehicles[i].die(); 
                soundEfx.play();
             // soundEfx.play();
             // sketch.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
             // //this is the part where I need to change the animation *********************
             // sketch.animation1.next();//pass to the next image 
-            // vehicles.splice(i, 1);
+            // sketch.vehicles.splice(i, 1);
             // myp5.score = (myp5.score + 1);
             // console.log('score = ' + myp5.score);
 
