@@ -18,6 +18,8 @@
 
       var animation1;
 
+      var foodArray = Array(DonutClass(), ChickenClass(), PacManClass(), BaconClass());
+
   sketch.setup = function() {
 
 
@@ -38,14 +40,16 @@
         // We are now making random vehicles and storing them in an array
          
         for (var i = 0; i < 5; i++) {
-          var r = myp5.random(1);
+          //var r = myp5.random(1);
+          var item = foodArray[Math.floor(Math.random()*foodArray.length)];
           // // vehicles.push(new Vehicle(350,250));
-             if (r < 0.5) {
-              vehicles.push(new Vehicle(250,250));
-              } else {
-              vehicles.push(new ChildClass(350,250));
-             }
-
+            // if (r < 0.5) {
+              console.log(item);
+              vehicles.push(new item(250,250));
+              // } else {
+              //   vehicles.push(new ChickenClass(350,250));
+              //  } 
+  
         }
       console.log("vehicles.length  = " + vehicles.length);
       myp5.score = 0;
@@ -92,6 +96,6 @@
 
 
 
- };
+ }
 
 var myp5 = new p5(s, 'p5canvas');

@@ -6,11 +6,11 @@ var ChickenClass = function(position) {
 };
 
 // Inherit from the parent class
-ChildClass.prototype = Object.create(Vehicle.prototype);
-ChildClass.prototype.constructor = ChildClass;
+ChickenClass.prototype = Object.create(Vehicle.prototype);
+ChickenClass.prototype.constructor = ChickenClass;
 
 // Override the display method
-  ChildClass.prototype.display = function() {
+  ChickenClass.prototype.display = function() {
   //this is where the prototypes get displayed... how do we stop displaying one at a time?
     myp5.stroke(255, 255, 255);
     myp5.strokeWeight(1);
