@@ -40,7 +40,7 @@
 	}
 
 	// Separation
-	// Method checks for nearby myp5.myp5.vehicles and steers away
+	// Method checks for nearby myp5.vehicles and steers away
 	Vehicle.prototype.separate = function(vehicles) {
 	  // var desiredseparation = this.r*2;
 	  var desiredseparation = 20;
@@ -90,6 +90,7 @@
 
 	// Method to update location
 	Vehicle.prototype.update = function() {
+		  // console.log("made it to prototype update");
 		  // Update velocity
 		  this.velocity.add(this.acceleration);
 		  // Limit speed
@@ -157,7 +158,7 @@
             myp5.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
             //this is the part where I need to change the animation *********************
             myp5.animation1.next();//pass to the next image 
-            myp5.myp5.vehicles.splice(i, 1);
+            myp5.vehicles.splice(i, 1);
             myp5.score = (myp5.score + 1);
             console.log('score = ' + myp5.score);
 	}

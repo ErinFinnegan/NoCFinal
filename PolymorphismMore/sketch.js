@@ -47,7 +47,7 @@
           // // sketch.vehicles.push(new Vehicle(350,250));
             // if (r < 0.5) {
               console.log(index);
-              sketch.vehicles.push(new foodArray[index]());
+              sketch.vehicles.push(new foodArray[index](0,0));
               // } else {
               //   sketch.vehicles.push(new ChickenClass(350,250));
               //  } 
@@ -61,15 +61,19 @@
     sketch.clear();
 
         
-        for (var i = sketch.vehicles.length-1; i >= 0; i--) {
-
+         for (var i = sketch.vehicles.length-1; i >= 0; i--) {
+        //for (var i = 0; i < sketch.vehicles.length; i++) {
+         // console.log("made it to sketch.vehicles.length for loop");
           sketch.vehicles[i].applyBehaviors(sketch.vehicles);
+          //console.log("made it to apply behaviors");
           sketch.vehicles[i].update();
+          //console.log("made it to update);
           sketch.vehicles[i].borders();
+          //console.log("made it to borders");
           sketch.vehicles[i].display(); 
+          //console.log("made it to display");
 
           if (!sketch.vehicles[i].isAlive){
-       
                sketch.vehicles[i].die(); 
                soundEfx.play();
             // soundEfx.play();
