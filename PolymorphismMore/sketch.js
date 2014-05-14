@@ -46,12 +46,11 @@
           var index = myp5.floor(myp5.random(0,foodArray.length));
           // // sketch.vehicles.push(new Vehicle(350,250));
             // if (r < 0.5) {
-              console.log(index);
+              //console.log(index);
               sketch.vehicles.push(new foodArray[index](0,0));
               // } else {
               //   sketch.vehicles.push(new ChickenClass(350,250));
               //  } 
-  
         }
       console.log("sketch.vehicles.length  = " + sketch.vehicles.length);
       myp5.score = 0;
@@ -72,6 +71,7 @@
           //console.log("made it to borders");
           sketch.vehicles[i].display(); 
           //console.log("made it to display");
+          console.log("foodimage aray index" +  sketch.vehicles[i].foodArray[i]);
 
           if (!sketch.vehicles[i].isAlive){
                sketch.vehicles[i].die(); 

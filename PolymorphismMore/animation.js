@@ -12,6 +12,9 @@ function Animation (_framex, _speed)  {
   this.speed = _speed;//going through the array at this speed 
   this.imageIndex = 1;
   this.donutArray=[];
+  this.chickenArray=[];
+  this.baconArray=[];
+  this.pacmanghostArray=[];
   this.playing = true;
 
 };
@@ -25,6 +28,9 @@ var test1 = test;
   for (var i = 0; i < this.maxImages; i++){
     var index = i+1;  // image files start at 1, not 0
     this.donutArray[i] = myp5.loadImage( "donutdeath/" + test1  + (index)+ ".png");
+    this.chickenArray[i] = myp5.loadImage( "styles/chickendeath/" + test1  + (index)+ ".png");
+    this.baconArray[i] = myp5.loadImage( "styles/bacondeath/" + test1  + (index)+ ".png");
+    this.pacmanghostArray[i] = myp5.loadImage( "styles/pacmanghostdeath/" + test1  + (index)+ ".png");
   }
 }
 
