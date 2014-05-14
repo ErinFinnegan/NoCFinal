@@ -52,4 +52,4 @@ var W = _W;
 var H = _H;
   
   myp5.image(this.donutArray[myp5.floor(this.imageIndex)], Xpos, Ypos, W, H);//floor is used because the speed cannot be a float so what floor does is tell it draw it at one second OPP would be celling 
-  }
+}

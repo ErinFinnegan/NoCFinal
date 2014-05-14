@@ -4,7 +4,7 @@
   var s = function( sketch ) {
 
       var animation1; //not sure I need to put this here
-
+      var animation2;
 
       var videostarted = false;
       sketch.vehicles = [];
@@ -13,10 +13,13 @@
 
       var name = "donut";
       var name2 = "donutdeath";
+      var nameChicken = "chicken";
+      var nameChicken2 = "chickendeath";
+
 
       var totalframes = 8;
 
-      var animation1;
+      //var animation1;  //in here twice
 
       var foodArray = new Array(DonutClass, ChickenClass, PacManClass, BaconClass);
 
@@ -34,8 +37,10 @@
 
       sketch.frameRate(24);
       sketch.animation1 = new Animation(totalframes, 1);
+      sketch.animation2 = new Animation(totalframes, 1);
 
       sketch.animation1.preload(name2);
+      sketch.animation2.preload(nameChicken2);
 
       canvas = sketch.createCanvas(640, 480);
       canvas.class("p5canvas");   //references the HTML
@@ -71,11 +76,13 @@
           //console.log("made it to borders");
           sketch.vehicles[i].display(); 
           //console.log("made it to display");
-          console.log("foodimage aray index" +  sketch.vehicles[i].foodArray[i]);
+           // console.log("typeof.sketch.vehicles" +  (typeof sketch.vehicles));
+
 
           if (!sketch.vehicles[i].isAlive){
                sketch.vehicles[i].die(); 
                soundEfx.play();
+               sketch.vehicles.splice(i, 1);
             // soundEfx.play();
             // sketch.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
             // //this is the part where I need to change the animation *********************

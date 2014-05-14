@@ -131,8 +131,6 @@
 
 	 }
 
-
-
 	 //if this is dead, delete it from the array************************
 	 myp5.popMatrix();
 
