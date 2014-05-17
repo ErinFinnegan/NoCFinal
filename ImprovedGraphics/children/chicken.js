@@ -18,7 +18,7 @@ ChickenClass.prototype.display = function() {
   myp5.translate(this.position.x, this.position.y);
   //color was here
  //myp5.ellipse(0, 0, 64,64);
-      myp5.image(myp5.chicken, 0,0, 100, 50);
+      myp5.image(myp5.chicken, 0,0, 120, 79);
 
  if (!this.isAlive) {
   myp5.fill(255,0,0,100);
