@@ -1,0 +1,20 @@
+Resident Questions:
+
+--- Full screen?
+-- wtf CLM tracker
+
+-- Enable Auto-start
+
+-- Draw animation on top of other items
+
+
+* scoring broke again
+
+
+-- move CSS
+-- put things in a container tag
+-- responsive full screen video
+
+-- cleaning the code
+
+-- padded version too
