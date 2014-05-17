@@ -4,8 +4,7 @@
 			body {
 				font-family: 'Lato';
 				background-color: #f0f0f0;
-				margin: 0px auto;
-				
+				/*margin: 0px auto;*/
 				/*max-width: 1150px;*/
 				/*-webkit-column-count:2;  Chrome, Safari, Opera */
 				/*-moz-column-count:2; /* Firefox */
@@ -62,37 +61,43 @@
 			}
 
 			#clock{
-			position:relative;
-			border:solid 1px #ddd;
-			margin-left:auto;
-			margin-right:auto;
+			position:absolute;
+			/*border:solid 1px #ddd;*/
 			width:150px;
-			color:#fff;
+			color:#fff; /* Fallback for older browsers */
+		    color: rgba(255, 255, 255, 0.25);
+
 			/*background-color:#000;*/
 			font-size:4em;
 			/*box-shadow:5px 5px 2px #888;*/
 			font-family:  sans-serif;
 			/*text-align:left;*/
 			margin-left: auto;
-			margin-right: auto
+			margin-right: auto;
 			z-index:2;
 			}
 			
-	/*		h2 {
+			h2 {
 				font-weight : 400;
-			}*/
+				margin-left: auto;
+				margin-right: auto;
+				text-align:center;
+			}
 
 			.nogum {
 				display : none;
 			}
 			
 			.btn {
-				/*position:absolute;*/
+				position:absolute;
+				color: rgba(0, 0, 0, 0.25);
 				font-family: 'Lato';
-				font-size: 72px;
+				font-size: 45px;
 				z-index:3;
+				width: 200px;
 				margin-left: auto;
-			    margin-right: auto
+			    margin-right: auto;
+
 			}
 
 			.hide {

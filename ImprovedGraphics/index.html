@@ -56,16 +56,16 @@
 		<script src="js/mossefilter.js"></script>
 		<script src="js/Stats.js"></script> 
 		<h1><div id="content"></h1>
-			<div id="clock"></div>
 			<h2>OMNOMNOMNOMITRON</h2>
-			<div id="container">
-				<video id="videoel" width="640" height="480" preload="auto" loop>
-				</video>
-				<canvas id="p5canvas" width="640" height="480"></canvas>
-				<canvas id="overlay" width="640" height="480"></canvas>
-				</div>
 			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo();startClock()" id="startbutton"></input>
-			<!-- GameClock from https://github.com/kgaddy/gameclock -->
+			<div id="container">
+				<div id="clock"></div>
+				<video id="videoel" width="640" height="480" preload="auto" loop></video>
+
+				<canvas id="p5canvas" width="640" height="480"></canvas>
+
+				<canvas id="overlay" width="640" height="480"></canvas>
+			</div>
 			<div id="text">
 				<p id="mouthposition"></p>
 				<p>A game using <a href="https://github.com/auduno/clmtrackr"><em>clmtrackr</em></a></p>
