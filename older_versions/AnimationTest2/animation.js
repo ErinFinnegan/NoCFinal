@@ -46,14 +46,14 @@ function Animation (_framex, _speed)  {
 
 ///////////////////PROTOTYPE
 
-Animation.prototype.preload = function(test) { //load this array of images
+Animation.prototype.preload = function(test, root) { //load this array of images
 
 var test1 = test;
 
   for (var i = 0; i < this.maxImages; i++){
     var index = i+1;  // image files start at 1, not 0
     this.donutArray[i] = loadImage( "donutdeath/" + test1  + (index)+ ".png");
-  }
+  };
 }
 
 Animation.prototype.next = function() { //go through this loop

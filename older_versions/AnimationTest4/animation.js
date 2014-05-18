@@ -1,10 +1,10 @@
 
 
 var animation1;
-
+var whichimage = "bacon";
 // var name = "donut";
 // var name2 = "donutdeath";
- var name3 = "bacon";
+ // var name = "bacon";
 
 var totalframes = 8;
 
@@ -14,10 +14,10 @@ function setup() {
   createCanvas(640, 360);
   background(255, 204, 0);
   frameRate(24);
-  animation1 = new Animation(totalframes, 1);
+  animation1 = new Animation(totalframes, 1, whichimage);
 
   // animation1.preload(name2);
-   animation1.preload(name3);
+   animation1.preload(whichimage);
 
    // donut = loadImage("donut.png");
    // bacon = loadImage("bacon.png");
@@ -40,17 +40,20 @@ function drawing(){ //how it draws
   
 }
 
-function Animation (_framex, _speed)  {
+function Animation (_framex, _speed, _image)  {
 
 
   var framex = _framex;
+  var imageName = _image;
+
   this.maxImages = framex;
   this.speed = _speed;//going through the array at this speed 
   this.imageIndex = 1;
-  this.donutArray=[];
-  this.chickenArray=[];
-  this.baconArray=[];
-  this.pacmanghostArray=[];
+  this.imageNameArray=[]; 
+  // this.donutArray=[];
+  // this.chickenArray=[];
+  // this.baconArray=[];
+  // this.pacmanghostArray=[];
   this.playing = true;
 
 };
@@ -70,8 +73,9 @@ Animation.prototype.preload = function(test) { //load this array of images
 
     for (var i = 0; i < this.maxImages; i++){
     var index = i+1;  
-    this.baconArray[i] = loadImage(  "bacondeath/" + test1 + "death" + (index)+ ".png");
-        console.log( "bacondeath/" + test1 + "death" + (index)+ ".png");
+    this.imageNameArray[i] = loadImage(  whichimage + "death/" + test1 + "death" + (index)+ ".png");
+
+        console.log( whichimage + "death/" + test1 + "death" + (index)+ ".png");
        // console.log("index =  " + index + " test1 = " + test1 + " test  = " + test);
   }
   
@@ -99,6 +103,6 @@ var Ypos = _Ypos;
 var W = _W;
 var H = _H;
   
-  image(this.baconArray[floor(this.imageIndex)], Xpos, Ypos, W, H);//floor is used because the speed cannot be a float so what floor does is tell it draw it at one second OPP would be celling 
+  image(this.imageNameArray[floor(this.imageIndex)], Xpos, Ypos, W, H);//floor is used because the speed cannot be a float so what floor does is tell it draw it at one second OPP would be celling 
    // console.log(this.baconArray);
   }
