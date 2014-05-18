@@ -100,8 +100,9 @@
         } else {  
           myp5.fill(250,25,120);
         }
-
+     // Cheek markers are drawn here
        myp5.noStroke;
+       myp5.stroke(255, 255, 255, 0);
        myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 30, 30); //draws a cheek
        myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 30, 30); //draws a cheek
 

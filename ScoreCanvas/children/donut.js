@@ -20,8 +20,9 @@ DonutClass.prototype.constructor = DonutClass;
     //color was here
    
     myp5.fill(0,0,255,50);
-    myp5.image(myp5.donut, -50, 0, 105, 105);
-    myp5.ellipse(0, 0, 64,64);
+    myp5.image(myp5.donut, -50, -50, 105, 105);
+    // myp5.ellipse(0, 0, 64,64); //debug ellipse
+
 
    if (!this.isAlive) {
    

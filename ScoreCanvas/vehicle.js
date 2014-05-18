@@ -43,7 +43,7 @@
 	// Method checks for nearby myp5.vehicles and steers away
 	Vehicle.prototype.separate = function(vehicles) {
 	  // var desiredseparation = this.r*2;
-	  var desiredseparation = 20;
+	  var desiredseparation = 100;
 	  var sum = new PVector();
 	  var count = 0;
 	  // For every boid in the system, check if it's too close

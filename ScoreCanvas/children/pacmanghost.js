@@ -18,8 +18,8 @@ PacManClass.prototype.constructor = PacManClass;
     myp5.translate(this.position.x, this.position.y);
     //color was here
       myp5.fill(115,0,80,50);
-      myp5.image(myp5.pacmanghost, -100, -70, 60, 60);
-      myp5.ellipse(0, 0, 64,64);
+      myp5.image(myp5.pacmanghost, -30, -40, 60, 60);
+      // myp5.ellipse(0, 0, 64,64); //debug ellipse
 
    if (!this.isAlive) {
         //myp5.ellipse(0, 0, 64,64);
