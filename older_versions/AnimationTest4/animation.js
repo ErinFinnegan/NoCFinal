@@ -16,12 +16,8 @@ function setup() {
   frameRate(24);
   animation1 = new Animation(totalframes, 1, whichimage);
 
-  // animation1.preload(name2);
    animation1.preload(whichimage);
 
-   // donut = loadImage("donut.png");
-   // bacon = loadImage("bacon.png");
-   // bacon = loadImage("bacondeath/bacondeath8.png");
 
 
 }
@@ -50,10 +46,7 @@ function Animation (_framex, _speed, _image)  {
   this.speed = _speed;//going through the array at this speed 
   this.imageIndex = 1;
   this.imageNameArray=[]; 
-  // this.donutArray=[];
-  // this.chickenArray=[];
-  // this.baconArray=[];
-  // this.pacmanghostArray=[];
+
   this.playing = true;
 
 };
@@ -64,11 +57,6 @@ Animation.prototype.preload = function(test) { //load this array of images
 
  var test1 = test;
 
-  // for (var i = 0; i < this.maxImages; i++){
-  //   var index = i+1;  // image files start at 1, not 0
-  //   this.donutArray[i] = loadImage( "donutdeath/" + test1  + (index)+ ".png");
-  //   // console.log( "donutdeath/" + test1  + (index)+ ".png");
-  // }
 
 
     for (var i = 0; i < this.maxImages; i++){
@@ -76,13 +64,9 @@ Animation.prototype.preload = function(test) { //load this array of images
     this.imageNameArray[i] = loadImage(  whichimage + "death/" + test1 + "death" + (index)+ ".png");
 
         console.log( whichimage + "death/" + test1 + "death" + (index)+ ".png");
-       // console.log("index =  " + index + " test1 = " + test1 + " test  = " + test);
+
   }
   
-    // this.chickenArray[i] = loadImage( "chickendeath/0" + test1  + (index)+ ".png");
-    // this.baconArray[i] = loadImage( "bacondeath/" + test1  + (index)+ ".png");
-    // this.pacmanghostArray[i] = loadImage( "pacmanghostdeath/" + test1  + (index)+ ".png");
-
   
 }
 
@@ -104,5 +88,5 @@ var W = _W;
 var H = _H;
   
   image(this.imageNameArray[floor(this.imageIndex)], Xpos, Ypos, W, H);//floor is used because the speed cannot be a float so what floor does is tell it draw it at one second OPP would be celling 
-   // console.log(this.baconArray);
+
   }
