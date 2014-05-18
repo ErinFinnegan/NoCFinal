@@ -35,8 +35,8 @@
       sketch.pacmanghost = sketch.loadImage("styles/pacmanghost.png"); 
 
       sketch.frameRate(24);
-      sketch.animation1 = new Animation(totalframes, 1);
-      sketch.animation2 = new Animation(totalframes, 1);
+      sketch.animation1 = new Animation(totalframes, 0.2);
+      sketch.animation2 = new Animation(totalframes, 0.2);
 
       sketch.animation1.preload(name2);
       sketch.animation2.preload(nameChicken2);
