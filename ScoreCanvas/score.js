@@ -1,3 +1,6 @@
+
+
+
 var p = function( sketch ) {
 
 
@@ -17,6 +20,9 @@ var p = function( sketch ) {
        scoreCanvas.fill(255, 255, 255, 0.33);
        scoreCanvas.text("Score", 500, 35);
        scoreCanvas.text(myp5.score, 570, 75);
+
+
+       // scoreKeeper();
 
 
   }

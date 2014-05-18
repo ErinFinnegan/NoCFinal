@@ -122,7 +122,7 @@ function positionLoop() {
        }
        
     }
-    if ((bottomlip - toplip) >= 6){
+    if ((bottomlip - toplip) >= 6){   //change the distance of the lips here
       mouthopen = true;
       //console.log('your mouth is open')
       document.getElementById('mouthposition').innerHTML = "mouth is open";

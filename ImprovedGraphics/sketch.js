@@ -85,7 +85,7 @@
             // soundEfx.play();
             // sketch.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
             // //this is the part where I need to change the animation *********************
-            // sketch.animation1.next();//pass to the next image 
+            sketch.animation1.next();//pass to the next image 
             // sketch.vehicles.splice(i, 1);
             // myp5.score = (myp5.score + 1);
             // console.log('score = ' + myp5.score);
