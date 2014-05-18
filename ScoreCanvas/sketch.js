@@ -104,10 +104,7 @@
        myp5.noStroke;
        myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 30, 30); //draws a cheek
        myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 30, 30); //draws a cheek
-       myp5.textSize(42);
-       myp5.fill(255, 255, 255, 0.5);
-       myp5.text("Score", 20, 35);
-       myp5.text(myp5.score, 20, 75);
+
 
 
       }

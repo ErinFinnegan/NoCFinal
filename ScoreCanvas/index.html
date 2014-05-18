@@ -31,6 +31,7 @@
 		<script src="children/pacmanghost.js"></script> 
   	  <script language="javascript" type="text/javascript" src="children.js"></script>
 	  <script language="javascript" type="text/javascript" src="sketch.js"></script>
+	  <script language="javascript" type="text/javascript" src="score.js"></script>
 
 	
 	  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -58,13 +59,16 @@
 			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo();startClock()" id="startbutton"></input>
 			<div id="container">
 				<div id="clock">
-					<p id="score"></p>
+					<!-- <p id="score"></p> -->
 				</div>
 				<video id="videoel" width="640" height="480" preload="auto" loop></video>
 
 				<canvas id="p5canvas" width="640" height="480"></canvas>
 
 				<canvas id="overlay" width="640" height="480"></canvas>
+
+				<canvas id="scoreCanvas" width="640" height="480"></canvas>
+				
 			</div>
 			<div id="text">
 				<p id="mouthposition"></p>
