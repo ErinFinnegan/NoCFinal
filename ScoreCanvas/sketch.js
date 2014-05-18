@@ -45,7 +45,7 @@
       canvas.class("p5canvas");   //references the HTML
         // We are now making random sketch.vehicles and storing them in an array
          
-        for (var i = 0; i < 25; i++) {
+        for (var i = 0; i < 15; i++) {
           //var r = myp5.random(1);
           var index = myp5.floor(myp5.random(0,foodArray.length));
           // // sketch.vehicles.push(new Vehicle(350,250));

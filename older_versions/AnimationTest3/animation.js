@@ -1,7 +1,10 @@
+
+
 var animation1;
 
 var name = "donut";
 var name2 = "donutdeath";
+// var name3 = "bacon";
 
 var totalframes = 8;
 
@@ -14,14 +17,19 @@ function setup() {
   animation1 = new Animation(totalframes, 1);
 
   animation1.preload(name2);
+  // animation1.preload(name3);
 
-  donut = loadImage("donut.png");
+   donut = loadImage("donut.png");
+   bacon = loadImage("bacon.png");
+   // bacon = loadImage("bacondeath/bacondeath8.png");
+
 
 }
 
 function draw() { 
     background(255, 204, 0);
     animation1.display(50, 20, 320, 300);
+    // image(bacon, 150, 150, 200, 100);
     animation1.next();//pass to the next image 
 }
 
@@ -40,6 +48,9 @@ function Animation (_framex, _speed)  {
   this.speed = _speed;//going through the array at this speed 
   this.imageIndex = 1;
   this.donutArray=[];
+  this.chickenArray=[];
+  this.baconArray=[];
+  this.pacmanghostArray=[];
   this.playing = true;
 
 };
@@ -48,11 +59,18 @@ function Animation (_framex, _speed)  {
 
 Animation.prototype.preload = function(test) { //load this array of images
 
-var test1 = test;
+ var test1 = test;
 
   for (var i = 0; i < this.maxImages; i++){
     var index = i+1;  // image files start at 1, not 0
     this.donutArray[i] = loadImage( "donutdeath/" + test1  + (index)+ ".png");
+    console.log( "donutdeath/" + test1  + (index)+ ".png");
+    //this.donutArray[i] = loadImage(  "bacondeath/" + name3  + (index)+ ".png");
+    // console.log("bacondeath/" + name3  + (index)+ ".png");
+    // this.chickenArray[i] = loadImage( "chickendeath/0" + test1  + (index)+ ".png");
+    // this.baconArray[i] = loadImage( "bacondeath/" + test1  + (index)+ ".png");
+    // this.pacmanghostArray[i] = loadImage( "pacmanghostdeath/" + test1  + (index)+ ".png");
+
   }
 }
 
@@ -74,6 +92,5 @@ var W = _W;
 var H = _H;
   
   image(this.donutArray[floor(this.imageIndex)], Xpos, Ypos, W, H);//floor is used because the speed cannot be a float so what floor does is tell it draw it at one second OPP would be celling 
+  // console.log(this.donutArray);
   }
-
-  

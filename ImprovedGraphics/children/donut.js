@@ -12,7 +12,10 @@ DonutClass.prototype.constructor = DonutClass;
 // Override the display method
   DonutClass.prototype.display = function() {
     // console.log("made it to donut prototype update");
-  //this is where the prototypes get displayed... how do we stop displaying one at a time?
+  //this is where the prototypes get displayed... 
+
+  myp5.whichArray = myp5.chickenArray;
+
     myp5.stroke(255, 255, 255);
     myp5.strokeWeight(1);
     myp5.pushMatrix();

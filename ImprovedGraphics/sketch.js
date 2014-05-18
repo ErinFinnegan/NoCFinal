@@ -14,6 +14,7 @@
       var name2 = "donutdeath";
       var nameChicken = "chicken";
       var nameChicken2 = "chickendeath";
+      var whichArray;
 
 
       var totalframes = 8;
@@ -36,10 +37,9 @@
 
       sketch.frameRate(24);
       sketch.animation1 = new Animation(totalframes, 1);
-      sketch.animation2 = new Animation(totalframes, 1);
 
       sketch.animation1.preload(name2);
-      sketch.animation2.preload(nameChicken2);
+      
 
       canvas = sketch.createCanvas(640, 480);
       canvas.class("p5canvas");   //references the HTML

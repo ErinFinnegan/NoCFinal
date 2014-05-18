@@ -17,8 +17,10 @@ BaconClass.prototype.constructor = BaconClass;
     myp5.pushMatrix();
     myp5.translate(this.position.x, this.position.y);
     //color was here
-   //myp5.ellipse(0, 0, 64,64);
-        myp5.image(myp5.bacon, 0,0, 131, 44);
+        myp5.fill(255,0,0,100);
+        myp5.image(myp5.bacon, -40, -20, 131, 44);
+        myp5.ellipse(0, 0, 64,64);
+
 
    if (!this.isAlive) {
     myp5.fill(255,0,0,100);

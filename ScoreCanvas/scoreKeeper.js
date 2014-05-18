@@ -10,23 +10,23 @@
 //   setter creator void setItem(in DOMString key, in any data);
 // };
 
-var highScore = localStorage["50"];
-localStorage["50"] = highScore;
+// var highScore = localStorage["50"];
+// localStorage["50"] = highScore;
 
 
 
-function scoreKeeper() {
-    // if (!supportsLocalStorage()) { return false; }
-    localStorage["highScore"] = myp5.score;
-    console.log("scoreKeeper says highScore = " + highScore);
- //   for (var i = 0; i < kNumPieces; i++) {
-	// localStorage["halma.piece." + i + ".row"] = gPieces[i].row;
-	// localStorage["halma.piece." + i + ".column"] = gPieces[i].column;
- //    }
- //    localStorage["halma.selectedpiece"] = gSelectedPieceIndex;
- //    localStorage["halma.selectedpiecehasmoved"] = gSelectedPieceHasMoved;
- //    localStorage["halma.movecount"] = gMoveCount;
-    return true;
-}
+// function scoreKeeper() {
+//     // if (!supportsLocalStorage()) { return false; }
+//     localStorage["highScore"] = myp5.score;
+//     console.log("scoreKeeper says highScore = " + highScore);
+//  //   for (var i = 0; i < kNumPieces; i++) {
+// 	// localStorage["halma.piece." + i + ".row"] = gPieces[i].row;
+// 	// localStorage["halma.piece." + i + ".column"] = gPieces[i].column;
+//  //    }
+//  //    localStorage["halma.selectedpiece"] = gSelectedPieceIndex;
+//  //    localStorage["halma.selectedpiecehasmoved"] = gSelectedPieceHasMoved;
+//  //    localStorage["halma.movecount"] = gMoveCount;
+//     return true;
+// }
 
-scoreKeeper();
+// scoreKeeper();
