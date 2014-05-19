@@ -16,8 +16,8 @@ function Animation (_framex, _speed, _whichimage)  {
   this.imageNameArray=[];
   this.playing = true;
   // console.log("sketchimage in Animation function = " + sketch.whichimage);
-  console.log("whichimage in Animation function = " + myp5.whichimage);
-  console.log("_whichimage in Animation function = " + _whichimage);
+  // console.log("whichimage in Animation function = " + myp5.whichimage);
+  // console.log("_whichimage in Animation function = " + _whichimage);
 
 };
 
@@ -32,7 +32,7 @@ var test1 = test;
   for (var i = 0; i < this.maxImages; i++){
     var index = i+1;  // image files start at 1, not 0
     this.imageNameArray[i] = myp5.loadImage("styles/" + myp5.whichimage + "death/" + test1 + "death0" + (index)+ ".png");
-    console.log("styles/" + myp5.whichimage + "death/" + test1 + "death0" + (index)+ ".png")
+    // console.log("styles/" + myp5.whichimage + "death/" + test1 + "death0" + (index)+ ".png")
   }
 }
 

@@ -122,7 +122,8 @@ function positionLoop() {
        }
        
     }
-    if ((bottomlip - toplip) >= 8){   //change the distance of the lips here
+    if ((bottomlip - toplip) >= 6){   //change the distance of the lips here
+    	//for native HD 8 is good, but for the logitech 4 is too small
       mouthopen = true;
       //console.log('your mouth is open')
       document.getElementById('mouthposition').innerHTML = "mouth is open";

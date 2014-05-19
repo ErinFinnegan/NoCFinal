@@ -1,4 +1,4 @@
-
+  
 //this sprite animation is adapted from Sharon Lee De La Cruz: http://unoseistres.com/javascript/comic/comic.html
 
 
@@ -52,6 +52,11 @@ var Xpos = _Xpos;
 var Ypos = _Ypos;
 var W = _W;
 var H = _H;
-  
-  myp5.image(this.imageNameArray[myp5.floor(this.imageIndex)], Xpos, Ypos, W, H);//floor is used because the speed cannot be a float so what floor does is tell it draw it at one second OPP would be celling 
+  console.log("Did you ever reach this aimation loop");
+  myp5.image(this.imageNameArray[myp5.floor(this.imageIndex)], Xpos, Ypos, W, H);
+  // (console.log("in the proto death " + imageNameArray[]);
+  //floor is used because the speed cannot be a float so what floor does is tell it draw 
+  //it at one second OPP would be celling 
 }
+
+

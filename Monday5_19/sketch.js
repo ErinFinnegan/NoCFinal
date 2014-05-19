@@ -5,7 +5,7 @@
 
       var whichimage = "marshmallowghost";
       var animation1; //not sure I need to put this here
-      console.log("whichimage in function = " + whichimage);
+      //console.log("whichimage in function = " + whichimage);
 
       // var videostarted = false;  //does nothing
       sketch.vehicles = [];
@@ -18,16 +18,13 @@
 
       var totalframes = 8;
 
-      //var animation1;  //in here twice
-
       var foodArray = new Array(DonutClass, ChickenClass, PacManClass, BaconClass, KaleClass);
       // , ParsleyClass, EdamameClass
 
 
-
   sketch.setup = function() {
 
-
+      //console.log("whichimage in function = " + whichimage);
 
       sketch.marshmallowghost = sketch.loadImage("styles/marshmallowghost.png");
       sketch.bacon = sketch.loadImage("styles/bacon.png");
@@ -38,7 +35,7 @@
       sketch.parsley = sketch.loadImage("styles/parsley.png"); 
       sketch.edamame = sketch.loadImage("styles/edamame.png"); 
 
-      sketch.frameRate(12);
+      //sketch.frameRate(24);
       sketch.animation1 = new Animation(totalframes, 0.2, whichimage);
       console.log("whichimage setup Animation function = " + whichimage);
 
@@ -50,7 +47,7 @@
       canvas.class("p5canvas");   //references the HTML
         // We are now making random sketch.vehicles and storing them in an array
          
-        for (var i = 0; i < 8; i++) {
+        for (var i = 0; i < 4; i++) {
           //var r = myp5.random(1);
           var index = myp5.floor(myp5.random(0,foodArray.length));
           // // sketch.vehicles.push(new Vehicle(350,250));
@@ -71,7 +68,7 @@
    sketch.draw = function() {
     sketch.clear();
 
-
+        
         
          for (var i = sketch.vehicles.length-1; i >= 0; i--) {
         //for (var i = 0; i < sketch.vehicles.length; i++) {
@@ -89,7 +86,7 @@
 
           if (!sketch.vehicles[i].isAlive){
                sketch.vehicles[i].die(); 
-               soundEfx.play();
+               //soundEfx.play();
                sketch.vehicles.splice(i, 1);
             // soundEfx.play();
             // sketch.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
@@ -105,17 +102,18 @@
         }
 
         if(mouthopen === true){
-          myp5.fill(0,255,40);
+          sketch.fill(0,255,40);
         } else {  
-          myp5.fill(250,25,120);
+          sketch.fill(250,25,120);
         }
      // Cheek markers are drawn here
-       myp5.noStroke;
-       myp5.stroke(255, 255, 255, 0);
-       myp5.ellipse((LeftsideOfmouthX-20), (LeftsideOfmouthY-20), 40, 40); //draws a cheek
-       myp5.ellipse((RightsideOfmouthX+20), (RightsideOfmouthY-20), 40, 40); //draws a cheek
+       sketch.noStroke;
+       sketch.stroke(255, 255, 255, 0);
+       sketch.ellipse((LeftsideOfmouthX-20), (LeftsideOfmouthY-20), 40, 40); //draws a cheek
+       sketch.ellipse((RightsideOfmouthX+20), (RightsideOfmouthY-20), 40, 40); //draws a cheek
 
-
+      
+      //console.log(sketch.)
 
       }
 

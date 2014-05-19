@@ -37,7 +37,7 @@ KaleClass.prototype.display = function() {
 KaleClass.prototype.die = function() {
 
             myp5.score = (myp5.score + 1);
-            console.log('score = ' + myp5.score);
+            // console.log('score = ' + myp5.score);
             myp5.health = (myp5.health + 1);
             myp5.bloodsugar = (myp5.bloodsugar - 1);
   }
