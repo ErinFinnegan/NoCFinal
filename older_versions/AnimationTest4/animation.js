@@ -2,9 +2,7 @@
 
 var animation1;
 var whichimage = "bacon";
-// var name = "donut";
-// var name2 = "donutdeath";
- // var name = "bacon";
+
 
 var totalframes = 8;
 
@@ -86,7 +84,10 @@ var Xpos = _Xpos;
 var Ypos = _Ypos;
 var W = _W;
 var H = _H;
-  
-  image(this.imageNameArray[floor(this.imageIndex)], Xpos, Ypos, W, H);//floor is used because the speed cannot be a float so what floor does is tell it draw it at one second OPP would be celling 
 
-  }
+image(this.imageNameArray[floor(this.imageIndex)], Xpos, Ypos, W, H);//floor is used because the speed cannot be a float so what floor does is tell it draw it at one second OPP would be celling 
+
+}
+
+
+  
