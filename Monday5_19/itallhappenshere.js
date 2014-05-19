@@ -93,8 +93,8 @@ function startVideo() {
 	// start tracking
 	ctrack.start(vid);
 	// start loop to draw face
-	//drawLoop();  //this is calling the draw loop for CLM tracker
-	console.log('Video Start was clicked!!!!!!!');
+	drawLoop();  //this is calling the draw loop for CLM tracker
+	// console.log('Video Start was clicked!!!!!!!');
 	videostarted = true;
 	//Assign audio to soundEfx
     soundEfx = document.getElementById("soundEfx");
@@ -122,7 +122,7 @@ function positionLoop() {
        }
        
     }
-    if ((bottomlip - toplip) >= 8){   //change the distance of the lips here
+    if ((bottomlip - toplip) >= 5){   //change the distance of the lips here
       mouthopen = true;
       //console.log('your mouth is open')
       document.getElementById('mouthposition').innerHTML = "mouth is open";
@@ -142,7 +142,7 @@ function drawLoop() {
 	overlayCC.clearRect(0, 0, 640, 480);  //when you set width and height you also have to clear this part
 	//psrElement.innerHTML = "score :" + ctrack.getScore().toFixed(4);
 	if (ctrack.getCurrentPosition()) {
-		//ctrack.draw(overlay);  // comment this out not to see the mask
+		ctrack.draw(overlay);  // comment this out not to see the mask
 		//console.log('still tracking the overlay - this is the draw loop');
 		//console.log('value = ' + value);
 	}

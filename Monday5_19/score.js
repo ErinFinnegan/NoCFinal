@@ -17,7 +17,7 @@ var p = function( sketch ) {
 
        scoreCanvas.noStroke();
        scoreCanvas.textSize(42);
-       scoreCanvas.fill(255, 255, 255, 0.33);
+       scoreCanvas.fill(20, 20, 20, 0.5);
        scoreCanvas.text("Score", 500, 35);
        scoreCanvas.text(myp5.score, 570, 75);
 

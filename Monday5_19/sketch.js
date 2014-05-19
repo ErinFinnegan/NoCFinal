@@ -4,7 +4,7 @@
   var s = function( sketch ) {
 
       var whichimage = "marshmallowghost";
-      var animation1; //not sure I need to put this here
+      // var animation1; //not sure I need to put this here
       //console.log("whichimage in function = " + whichimage);
 
       // var videostarted = false;  //does nothing
@@ -16,7 +16,7 @@
 
       // var name = whichimage;
 
-      var totalframes = 8;
+      // var totalframes = 8;
 
       var foodArray = new Array(DonutClass, ChickenClass, PacManClass, BaconClass, KaleClass);
       // , ParsleyClass, EdamameClass
@@ -35,12 +35,12 @@
       sketch.parsley = sketch.loadImage("styles/parsley.png"); 
       sketch.edamame = sketch.loadImage("styles/edamame.png"); 
 
-      //sketch.frameRate(24);
-      sketch.animation1 = new Animation(totalframes, 0.2, whichimage);
-      console.log("whichimage setup Animation function = " + whichimage);
+      sketch.frameRate(24);  //sets the framerate for the whole sketch
+      // sketch.animation1 = new Animation(totalframes, 0.2, whichimage);
+      // console.log("whichimage setup Animation function = " + whichimage);
 
 
-      sketch.animation1.preload(sketch.whichimage);
+      // sketch.animation1.preload(sketch.whichimage);
       // sketch.animation2.preload(nameChicken2);
 
       canvas = sketch.createCanvas(640, 480);
@@ -48,8 +48,8 @@
         // We are now making random sketch.vehicles and storing them in an array
          
         for (var i = 0; i < 4; i++) {
-          //var r = myp5.random(1);
-          var index = myp5.floor(myp5.random(0,foodArray.length));
+          //var r = sketch.random(1);
+          var index = sketch.floor(sketch.random(0,foodArray.length));
           // // sketch.vehicles.push(new Vehicle(350,250));
             // if (r < 0.5) {
               //console.log(index);
@@ -58,11 +58,11 @@
               //   sketch.vehicles.push(new ChickenClass(350,250));
               //  } 
         }
-      console.log("sketch.vehicles.length  = " + sketch.vehicles.length);
-      myp5.score = 0;
-      myp5.health = 0;
-      myp5.bloodsugar = 0;
-      myp5.PacManScore = 0;
+      // console.log("sketch.vehicles.length  = " + sketch.vehicles.length);
+      sketch.score = 0;
+      sketch.health = 0;
+      sketch.bloodsugar = 0;
+      sketch.PacManScore = 0;
       }
 
    sketch.draw = function() {
@@ -88,13 +88,13 @@
                sketch.vehicles[i].die(); 
                //soundEfx.play();
                sketch.vehicles.splice(i, 1);
-            // soundEfx.play();
+               soundEfx.play();
             // sketch.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
             // //this is the part where I need to change the animation *********************
             // sketch.animation1.next();//pass to the next image 
             // sketch.vehicles.splice(i, 1);
-            // myp5.score = (myp5.score + 1);
-            // console.log('score = ' + myp5.score);
+            // sketch.score = (sketch.score + 1);
+            // console.log('score = ' + sketch.score);
 
           }
 

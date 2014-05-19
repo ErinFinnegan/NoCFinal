@@ -37,14 +37,14 @@ ChickenClass.prototype.display = function() {
 ChickenClass.prototype.die = function() {
 
       // var animation1; //not sure I can put this here
-      var whichimage = "chicken";
-            console.log("chick death loop + whichimage = " + whichimage);
+      // var whichimage = "chicken";
+            // console.log("chick death loop + whichimage = " + whichimage);
             // myp5.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
             //this is the part where I need to change the animation *********************
             // myp5.animation1.next();//pass to the next image 
             // myp5.vehicles.splice(i, 1);
             myp5.score = (myp5.score + 1);
-            console.log('score = ' + myp5.score);
+            // console.log('score = ' + myp5.score);
             myp5.health = (myp5.health - 1);
             myp5.bloodsugar = (myp5.bloodsugar + 1);
             // myp5.PacManScore = (myp5.PacManScore + 1);
