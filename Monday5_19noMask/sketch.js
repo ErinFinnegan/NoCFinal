@@ -47,7 +47,7 @@
       canvas.class("p5canvas");   //references the HTML
         // We are now making random sketch.vehicles and storing them in an array
          
-        for (var i = 0; i < 4; i++) {
+        for (var i = 0; i < 16; i++) {
           //var r = sketch.random(1);
           var index = sketch.floor(sketch.random(0,foodArray.length));
           // // sketch.vehicles.push(new Vehicle(350,250));
@@ -117,6 +117,24 @@
 
       }
 
+      sketch.reset = function()  {
+
+        if( sketch.vehicles.length <= 5 ){
+
+            for (var i = 0; i < 10; i++) {
+            
+              var index = sketch.floor(sketch.random(0,foodArray.length));
+              
+              sketch.vehicles.push(new foodArray[index](0,0));
+              sketch.score = 0;
+              sketch.health = 0;
+              sketch.bloodsugar = 0;
+              
+            }
+
+        }
+
+    }
 
 
  }

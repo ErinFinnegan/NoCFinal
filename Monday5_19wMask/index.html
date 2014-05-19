@@ -60,16 +60,16 @@
 		<script src="js/Stats.js"></script> 
 		<div id="content">
 			<h2>OMNOMITRON</h2>
-			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo();startClock();myp5.setup()" id="startbutton"></input>
+			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo();startClock();myp5.reset()" id="startbutton"></input>
 			<div id="container">
 				<div id="clock">
 					<!-- <p id="score"></p> -->
 				</div>
 				<video id="videoel" width="640" height="480" preload="auto" loop></video>
 
-				<canvas id="p5canvas" width="640" height="480"></canvas>
-
 				<canvas id="overlay" width="640" height="480"></canvas>
+
+				<canvas id="p5canvas" width="640" height="480"></canvas>
 
 				<canvas id="scoreCanvas" width="640" height="480"></canvas>
 
