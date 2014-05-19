@@ -3,18 +3,15 @@
 
   var s = function( sketch ) {
 
+      var whichimage = "marshmallowghost";
       var animation1; //not sure I need to put this here
-      var animation2;
+      console.log("whichimage in function = " + whichimage);
 
       // var videostarted = false;  //does nothing
       sketch.vehicles = [];
       var score = 0;
 
-      var name = "donut";
-      var name2 = "donutdeath";
-      var nameChicken = "chicken";
-      var nameChicken2 = "chickendeath";
-
+      // var name = whichimage;
 
       var totalframes = 8;
 
@@ -34,12 +31,13 @@
       sketch.chicken = sketch.loadImage("styles/chicken.png");
       sketch.pacmanghost = sketch.loadImage("styles/pacmanghost.png"); 
 
-      sketch.frameRate(24);
-      sketch.animation1 = new Animation(totalframes, 0.2);
-      sketch.animation2 = new Animation(totalframes, 0.2);
+      sketch.frameRate(12);
+      sketch.animation1 = new Animation(totalframes, 0.2, whichimage);
+      console.log("whichimage setup Animation function = " + whichimage);
 
-      sketch.animation1.preload(name2);
-      sketch.animation2.preload(nameChicken2);
+
+      sketch.animation1.preload(sketch.whichimage);
+      // sketch.animation2.preload(nameChicken2);
 
       canvas = sketch.createCanvas(640, 480);
       canvas.class("p5canvas");   //references the HTML
@@ -62,6 +60,7 @@
 
    sketch.draw = function() {
     sketch.clear();
+
 
         
          for (var i = sketch.vehicles.length-1; i >= 0; i--) {

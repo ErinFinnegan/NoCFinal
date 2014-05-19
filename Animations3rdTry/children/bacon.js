@@ -38,11 +38,12 @@ BaconClass.prototype.constructor = BaconClass;
 
 BaconClass.prototype.die = function() {
 
-      var animation2; //not sure I can put this here
+      var animation1; //not sure I can put this here
+      var whichimage = "bacon";
   
-            myp5.animation2.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
+            myp5.animation1.display((MouthCenterX - 50), (MouthCenterY - 50), 100, 100); //display the animation
             //this is the part where I need to change the animation *********************
-            myp5.animation2.next();//pass to the next image 
+            myp5.animation1.next();//pass to the next image 
             // myp5.vehicles.splice(i, 1);
             myp5.score = (myp5.score + 1);
             console.log('score = ' + myp5.score);

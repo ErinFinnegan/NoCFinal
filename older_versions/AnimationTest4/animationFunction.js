@@ -1,7 +1,7 @@
 
 
 
-function AnimationFuntion (_whichimage)  {
+function AnimationFunction (_whichimage)  {
 
       var animation1;
       var whichimage = _whichimage;

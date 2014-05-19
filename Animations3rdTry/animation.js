@@ -4,18 +4,20 @@
 
 
 
-function Animation (_framex, _speed)  {
-
+function Animation (_framex, _speed, _whichimage)  {
+  
+  myp5.whichimage = _whichimage;
 
   var framex = _framex;
+  var imageName = _whichimage;  //my addition
   this.maxImages = framex;
   this.speed = _speed;//going through the array at this speed 
   this.imageIndex = 1;
-  this.donutArray=[];
-  this.chickenArray=[];
-  this.baconArray=[];
-  this.pacmanghostArray=[];
+  this.imageNameArray=[];
   this.playing = true;
+  // console.log("sketchimage in Animation function = " + sketch.whichimage);
+  console.log("whichimage in Animation function = " + myp5.whichimage);
+  console.log("_whichimage in Animation function = " + _whichimage);
 
 };
 
@@ -24,13 +26,13 @@ function Animation (_framex, _speed)  {
 Animation.prototype.preload = function(test) { //load this array of images
 
 var test1 = test;
+  
+   // console.log("whichimage in prototype = " + myp5.whichimage);
 
   for (var i = 0; i < this.maxImages; i++){
     var index = i+1;  // image files start at 1, not 0
-    this.donutArray[i] = myp5.loadImage( "donutdeath/" + test1  + (index)+ ".png");
-    this.chickenArray[i] = myp5.loadImage( "styles/chickendeath/" + test1  + (index)+ ".png");
-    this.baconArray[i] = myp5.loadImage( "styles/bacondeath/" + test1  + (index)+ ".png");
-    this.pacmanghostArray[i] = myp5.loadImage( "styles/pacmanghostdeath/" + test1  + (index)+ ".png");
+    this.imageNameArray[i] = myp5.loadImage("styles/" + myp5.whichimage + "death/" + test1 + "death0" + (index)+ ".png");
+    console.log("styles/" + myp5.whichimage + "death/" + test1 + "death0" + (index)+ ".png")
   }
 }
 
@@ -51,5 +53,5 @@ var Ypos = _Ypos;
 var W = _W;
 var H = _H;
   
-  myp5.image(this.donutArray[myp5.floor(this.imageIndex)], Xpos, Ypos, W, H);//floor is used because the speed cannot be a float so what floor does is tell it draw it at one second OPP would be celling 
+  myp5.image(this.imageNameArray[myp5.floor(this.imageIndex)], Xpos, Ypos, W, H);//floor is used because the speed cannot be a float so what floor does is tell it draw it at one second OPP would be celling 
 }
