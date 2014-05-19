@@ -6,7 +6,7 @@
       var animation1; //not sure I need to put this here
       var animation2;
 
-      var videostarted = false;
+      // var videostarted = false;  //does nothing
       sketch.vehicles = [];
       var score = 0;
 
@@ -103,8 +103,8 @@
      // Cheek markers are drawn here
        myp5.noStroke;
        myp5.stroke(255, 255, 255, 0);
-       myp5.ellipse((LeftsideOfmouthX-15), (LeftsideOfmouthY-15), 30, 30); //draws a cheek
-       myp5.ellipse((RightsideOfmouthX+15), (RightsideOfmouthY-15), 30, 30); //draws a cheek
+       myp5.ellipse((LeftsideOfmouthX-20), (LeftsideOfmouthY-20), 40, 40); //draws a cheek
+       myp5.ellipse((RightsideOfmouthX+20), (RightsideOfmouthY-20), 40, 40); //draws a cheek
 
 
 

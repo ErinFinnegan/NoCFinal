@@ -93,7 +93,7 @@ function startVideo() {
 	// start tracking
 	ctrack.start(vid);
 	// start loop to draw face
-	drawLoop();
+	//drawLoop();  //this is calling the draw loop for CLM tracker
 	console.log('Video Start was clicked!!!!!!!');
 	videostarted = true;
 	//Assign audio to soundEfx

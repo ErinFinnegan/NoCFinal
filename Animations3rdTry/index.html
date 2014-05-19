@@ -57,7 +57,7 @@
 		<script src="js/Stats.js"></script> 
 		<div id="content">
 			<h2>OMNOMITRON</h2>
-			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo();startClock()" id="startbutton"></input>
+			<input class="btn" type="button" value="wait, loading video" disabled="disabled" onclick="startVideo();startClock();myp5.setup()" id="startbutton"></input>
 			<div id="container">
 				<div id="clock">
 					<!-- <p id="score"></p> -->
@@ -87,7 +87,7 @@
 		
 	<script>
 		var stopme = function(){
-			// alert('Game Over! Your final score is ' + myp5.score);
+			alert('Game Over! Your final score is ' + myp5.score);
 			console.log('Game Over! Your final score is ' + myp5.score);
 		}
 		var clock = new Clock({
