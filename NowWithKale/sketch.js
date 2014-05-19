@@ -9,7 +9,10 @@
 
       // var videostarted = false;  //does nothing
       sketch.vehicles = [];
-      var score = 0;
+      var score = 0;  //overall score
+      var health = 0;
+      var bloodsugar = 0;
+      var PacManScore = 0;
 
       // var name = whichimage;
 
@@ -17,7 +20,8 @@
 
       //var animation1;  //in here twice
 
-      var foodArray = new Array(DonutClass, ChickenClass, PacManClass, BaconClass, KaleClass, ParsleyClass, EdamameClass);
+      var foodArray = new Array(DonutClass, ChickenClass, PacManClass, BaconClass, KaleClass);
+      // , ParsleyClass, EdamameClass
 
 
 
@@ -46,7 +50,7 @@
       canvas.class("p5canvas");   //references the HTML
         // We are now making random sketch.vehicles and storing them in an array
          
-        for (var i = 0; i < 15; i++) {
+        for (var i = 0; i < 8; i++) {
           //var r = myp5.random(1);
           var index = myp5.floor(myp5.random(0,foodArray.length));
           // // sketch.vehicles.push(new Vehicle(350,250));
@@ -59,6 +63,9 @@
         }
       console.log("sketch.vehicles.length  = " + sketch.vehicles.length);
       myp5.score = 0;
+      myp5.health = 0;
+      myp5.bloodsugar = 0;
+      myp5.PacManScore = 0;
       }
 
    sketch.draw = function() {

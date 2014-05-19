@@ -29,6 +29,7 @@
 		<script src="children/chicken.js"></script> 
 		<script src="children/donut.js"></script>
 		<script src="children/pacmanghost.js"></script> 
+		<script src="children/kale.js"></script> 
 		<script src="animation.js"></script>  <!-- to draw the gifs-->
   	<!--  <script language="javascript" type="text/javascript" src="children.js"></script> -->
 	  <script language="javascript" type="text/javascript" src="sketch.js"></script>
@@ -88,11 +89,12 @@
 		
 	<script>
 		var stopme = function(){
-			alert('Game Over! Your final score is ' + myp5.score);
-			console.log('Game Over! Your final score is ' + myp5.score);
+			alert('Game Over! \nYour total score is ' + myp5.score + "\n Health " + myp5.health + "\n Blood Sugar " + myp5.bloodsugar + "\n PacMan " + myp5.PacManScore);
+
+			// console.log('Game Over! Your final score is ' + myp5.score);
 		}
 		var clock = new Clock({
-			time:20000,   //set the time
+			time:25000,   //set the time
 			displayEL:'clock',
 			stopAferTimeout:true,
 			resetAfterTimeout:true,

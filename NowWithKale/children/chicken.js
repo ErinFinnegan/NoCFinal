@@ -45,4 +45,7 @@ ChickenClass.prototype.die = function() {
             // myp5.vehicles.splice(i, 1);
             myp5.score = (myp5.score + 1);
             console.log('score = ' + myp5.score);
+            myp5.health = (myp5.health - 1);
+            myp5.bloodsugar = (myp5.bloodsugar + 1);
+            // myp5.PacManScore = (myp5.PacManScore + 1);
   }
