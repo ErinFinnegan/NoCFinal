@@ -135,6 +135,9 @@ function positionLoop() {
       mouthopen = false;
       //console.log('your mouth is closed')
       document.getElementById('mouthposition').innerHTML = "mouth is closed";
+	 //  	if (myp5.vehicles.length = 0) {
+		// startbutton.value = "reset";
+		// }
     }
 
 
