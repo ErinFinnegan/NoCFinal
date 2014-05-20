@@ -127,14 +127,14 @@ function positionLoop() {
       //console.log('your mouth is open')
       document.getElementById('mouthposition').innerHTML = "mouth is open";
       //console.log("LX, LY, RX, RY" + LeftsideOfmouthX + " , " + LeftsideOfmouthY + " , " + RightsideOfmouthX + " , " + RightsideOfmouthY);
+	    document.getElementById('overallScore').innerHTML = "Overall Score " + myp5.score;
+  	    document.getElementById('healthScore').innerHTML = "   Health " + myp5.health;
+	    document.getElementById('bloodSugar').innerHTML = "   Blood Sugar Level " + myp5.bloodsugar;
+	    document.getElementById('pacManScore').innerHTML = "   Pac Man Score " + myp5.PacManScore;
     } else {
       mouthopen = false;
       //console.log('your mouth is closed')
       document.getElementById('mouthposition').innerHTML = "mouth is closed";
-	  	document.getElementById('overallScore').innerHTML = "Overall Score " + myp5.score;
-	    document.getElementById('healthScore').innerHTML = "Health " + myp5.health;
-	    document.getElementById('bloodSugar').innerHTML = "Blood Sugar Level " + myp5.bloodsugar;
-	    document.getElementById('pacManScore').innerHTML = "Pac Man Score " + myp5.PacManScore;
     }
 
 
