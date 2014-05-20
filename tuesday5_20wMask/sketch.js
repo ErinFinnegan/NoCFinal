@@ -119,7 +119,7 @@
 
       sketch.reset = function()  {
 
-        if( sketch.vehicles.length <= 10 ){
+        if( sketch.vehicles.length <= 5 ){
 
             for (var i = 0; i < 10; i++) {
             
