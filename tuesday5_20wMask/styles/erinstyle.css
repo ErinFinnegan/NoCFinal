@@ -119,12 +119,12 @@
 			}*/
 
 			p {
-			max-width:440px;
+			max-width:460px;
 			align: center;
 			margin-left: 300px;
 			}
 
-			br {
+			.scores {
 		
 				max-width:440px;
 				align: center;
